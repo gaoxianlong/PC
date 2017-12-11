@@ -1,0 +1,131 @@
+.search-top{
+	width: 1140px;
+	height: 108px;
+	background: #fff;
+	margin: 70px auto;
+	margin-bottom: 20px;
+	padding: 15px 30px 20px;
+}
+/*search*/
+.search-top .myform{
+	width: 360px;
+	height: 30px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.search-top .myform form{
+	width: 100%;
+	height: 30px;
+}
+.search-top .myform form .form-box{
+	width: 100%;
+	height: 30px;
+	border: 1px solid #999;
+}
+.search-top .myform form input{
+	width: 300px;
+	height: 100%;
+	border: none;
+	padding-left: 10px;
+	outline: none;
+	float: left;
+}
+.search-top .myform form .form-box span{
+	float: right;
+	width: 58px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	background: #999;
+	color: #fff;
+}
+.search-top .myform form .form-box span a{
+	color: #fff;
+}
+
+/*最新 最热*/
+.search-tabs{
+	width: 100%;
+	height: 33px;
+	line-height: 100%;
+	border-bottom: 1px solid #ccc;
+}
+
+.search-tabs a{
+	float: left;
+	width: 36px;
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	color: #666;
+	font-size: 16px;
+}
+.search-tabs .search-active{
+	border-bottom: 3px solid #666;
+}
+.search-con{
+	display: none;
+	width: 1140px;
+	height: 100%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.search-box .search-con:first-child{
+	display: block;
+}
+.search-con .search-zhkc{
+	width: 100%;
+	height: 328px;
+	background: #fff;
+	margin-bottom: 20px;
+	
+}
+.search-con .kc-title{
+	width: 100%;
+	height: 46px;
+	padding: 0 20px;
+	border-bottom: 1px solid #ccc;
+	
+}
+.search-con .kc-title p{
+	float: left;
+	height: 45px;
+	padding: 20px 10px 0;
+	
+}
+.search-con .kc-title p.gd-btn{
+	float: right;
+	margin-right: 10px;	
+}
+.search-con .kc-title p.gd-btn a{
+	color: #666;
+}
+.search-con .kc-title p.gd-btn span{
+	
+}
+.search-con .search-zhkc .kc-content,.search-con .search-kc .kc-content{
+	width: 100%;
+	height: 282px;
+	padding: 16px 10px 0px 30px;
+	margin-bottom: 20px;
+	background: #fff;
+}
+.search-con .search-kc .kc-content{
+	height: 830px;
+}
+.search-con .search-kc{
+	width: 100%;
+	height: 876px;
+	background: #fff;
+}
+.kc-content .tabs-con .tabs-main{
+	min-height: 248px;
+}
+.kc-content .tabs-con .tabs-main ul li{
+	width: 200px;
+}
+.kc-content .tabs-con .tabs-main ul li img{
+	border: none;
+}

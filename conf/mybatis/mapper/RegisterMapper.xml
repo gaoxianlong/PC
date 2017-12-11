@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.stk.dao.RegisterDao">
+
+
+	<insert   id="addphone"  parameterType="Users">
+		insert into tuser(ID,Telephone,Password,Registertime,Salt)
+		values(null,#{Telephone},#{Password},#{Registertime},#{Salt})
+	</insert>
+	
+	<update id="updateUsers" parameterType="Users">	
+		update tuser set
+		NickName=#{NickName},RealName=#{RealName},Sex=#{Sex},Birthday=#{Birthday},City1=#{City1},City2=#{City2},City3=#{City3},School=#{School},Grade=#{Grade},Education=#{Education},Teacher=#{Teacher},HelpCode=#{HelpCode},Sign=#{Sign}
+		where Telephone=#{Telephone}	
+	</update>
+	<select id="selectCode" parameterType="java.lang.String" resultType="HelpCodes">
+		select * from thelpcode where HelpCode=#{HelpCode}
+	</select>
+	<update id="updateCode" parameterType="HelpCodes">
+		update thelpcode set Num=#{Num} where HelpCode=#{HelpCode}
+	</update>
+	<update id="updateHelp" parameterType="Users">
+		update tuser set
+		HelpCode=#{HelpCode}
+		where Telephone=#{Telephone}
+	</update>
+	<update id="updatePwd" parameterType="Users">
+		update tuser set Password=#{Password},Salt=#{Salt} where Telephone=#{Telephone}
+	</update>
+	<select id="selectUser" resultType="Users" parameterType="java.lang.Integer">
+		select * from tuser where ID=#{ID}
+	</select>
+	
+</mapper>

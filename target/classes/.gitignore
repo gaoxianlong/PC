@@ -1,0 +1,11 @@
+/Interceptors
+/com
+/jdbc.properties
+/log4j.properties
+/mybatis
+/qqconnectconfig.properties
+/shiro.ini
+/spring-mvc.xml
+/spring-mybatis.xml
+/sqlMapConfig.xml
+/test

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.stk.dao.SelTypeDao">
+
+    <select id="getfree" resultType="Series">
+
+		select * from series where free=#{free}
+
+	</select>
+
+   <select id="upgetMulvyi" resultType="Type">
+		select * from type where
+		ID=#{id}
+
+	</select>
+
+
+
+	<select id="getMulvtotal" resultType="Type">
+		select * from type
+	</select>
+
+	<select id="getMulvyi" resultType="Type">
+		select * from type where 
+		ParentID=#{id} order by layered asc
+
+	</select>
+	
+	<select id="getMulvyisub" resultType="Type">
+		select * from type where
+		ID=#{id}
+
+	</select>
+	<!-- select ID,TypeName,ParentID,Sort,Identify from type -->
+	<select id="getMulver" resultType="Type">
+
+		select * from type where ParentID=#{id} order by layered asc
+
+	</select>
+	
+	<select id="getMulverxiugai" resultType="Type">
+
+		select * from type where ID=#{id}
+
+	</select>
+	<select id="getMulversub" resultType="Type">
+
+		select * from type where ID=#{id}
+
+	</select>
+
+	<select id="getMulvsan" resultType="Type">
+
+		select * from type where ParentID=#{id}
+
+	</select>
+	<select id="getMulvsansub" resultType="Type">
+
+		select * from type where ID=#{id}
+
+	</select>
+	<select id="getSeriesyi" resultType="Series">
+
+		select * from series where TypeValue=#{id}
+
+	</select>
+	<select id="getSerieser" resultType="Series">
+
+		select * from series where Type2Value=#{id}
+
+	</select>
+	<select id="getSeriessan" resultType="Series">
+
+		select * from series where Type3Value=#{id}
+
+	</select>
+	
+	
+	<select id="getCarousel" resultType="Carousel">
+		select * from carousel
+	</select>
+	
+	
+	<select id="getSeriesCarousel" resultType="Series">
+
+		select * from series where ID=#{id}
+
+	</select>
+	
+	
+	
+	<select id="getFppreSeries" resultType="Series">
+
+		select * from series where TypeValue=#{id} and fupin=1 order by CreateTime asc
+
+	</select>
+	
+	<select id="getFppreSerieser" resultType="Series">
+
+		select * from series where Type2Value=#{id} and fupin=1 order by CreateTime asc
+
+	</select>
+	
+	<select id="getFpMulv" resultType="Type">
+
+		select * from type where ParentID=#{id} order by layered asc
+
+	</select>
+	
+	
+	<select id="totalfpSerieser" resultType="Series">
+
+		select * from series where  fupin=1 order by CreateTime asc
+
+	</select>
+	
+	<select id="totalSerieserzh" resultType="Series">
+
+		select * from series  
+
+	</select>
+	<select id="totalSerieserzr" resultType="Series">
+
+		select * from series  by ClickRate asc
+
+	</select>
+	<select id="totalSerieserzx" resultType="Series">
+
+		select * from series  by CreateTime asc
+
+	</select>
+	
+	<insert id="addtypeyi" parameterType="Type"> 
+	insert into type(TypeName,ParentID,Sort,layered) values(#{TypeName},0,1,#{layered}) 
+	
+	</insert>
+	
+	<insert id="addtypeer" parameterType="Type"> 
+	insert into type(TypeName,ParentID,Sort) values(#{TypeName},#{ParentID},2) 
+	
+	</insert>
+	
+	<insert id="addtypesan" parameterType="Type"> 
+	insert into type(TypeName,ParentID,Sort) values(#{TypeName},#{ParentID},3) 
+	
+	</insert>
+	
+	<update id="uptypeyi" parameterType="Type"> 
+	update type set TypeName=#{TypeName},layered=#{layered} where ID=#{ID} 
+	
+	</update>
+	
+	<!-- <select id="getVulner" resultType="Vulner"> select * from vulner </select> 
+		<select id="getdingBs" resultType="Vulner"> select * from vulner </select> 
+		<select id="getBasvulById" resultType="string"> select vul_id from basic 
+		where id=#{id} </select> <insert id="addBasic" parameterType="Basic" keyProperty="id" 
+		useGeneratedKeys="true"> insert into basic(real_name,ip,system,server,softver,vul_id) 
+		values(#{realName},#{ip},#{system},#{server},#{softver},#{vulner}) </insert> 
+		<insert id="addvulner" parameterType="Vulner"> insert into vulner(name) values(#{name}) 
+		</insert> <insert id="addvuls"> insert into vulnerability(name,sort,degree,suggest,bas_id) 
+		values <foreach collection="vuls" item="vul" separator=","> (#{vul.name},#{vul.sort},#{vul.degree},#{vul.suggest},#{vul.basiid}) 
+		</foreach> </insert> <update id="updateBas"> update basic set real_name=#{realName},ip=#{ip},system=#{system},server=#{server},softver=#{softver} 
+		where id=#{id} </update> <delete id="deleteBasById"> delete from basic where 
+		id=#{id} </delete> -->
+</mapper>

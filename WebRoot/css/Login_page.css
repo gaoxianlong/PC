@@ -1,0 +1,333 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	background: #f1f1f1;
+	font-size: 12px;
+	color: #555;
+}
+body,p,h3,h4,ul,li,fieldset{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+fieldset, img {
+    border: 0 none;
+}
+.clearfix:after{
+	display: block;
+	clear: both;
+	content: '';
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+.clearfix{
+	zoom: 1;
+}
+ul,li{
+	list-style: none;
+}
+.wrap{
+	width: 100%;
+	
+	background: #f1f1f1;
+}
+.header{
+	width: 100%;
+	height: 50px;
+	background: #555;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.screen{
+	padding-top: 100px;
+	width: 100%;
+	height: 100%; 
+}
+.stk-container{
+	width: 920px;
+    height: 525px;
+    padding: 25px 25px 0;
+    margin: 0px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    -weibkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 1px 0 0 0 #d2d2d2, -1px 0 0 0 #d2d2d2, 0 1px 0 0 #b6b6b6, 0 2px 0 0 #d2d2d2, 2px 0 0 0 #e6e6e6, -2px 0 0 0 #e6e6e6, 0 3px 0 0 #e6e6e6, 0 -1px 0 0 #e6e6e6;
+    -webkit-box-shadow: 1px 0 0 0 #d2d2d2, -1px 0 0 0 #d2d2d2, 0 1px 0 0 #b6b6b6, 0 2px 0 0 #d2d2d2, 2px 0 0 0 #e6e6e6, -2px 0 0 0 #e6e6e6, 0 3px 0 0 #e6e6e6, 0 -1px 0 0 #e6e6e6;
+    -moz-box-shadow: 1px 0 0 0 #d2d2d2, -1px 0 0 0 #d2d2d2, 0 1px 0 0 #b6b6b6, 0 2px 0 0 #d2d2d2, 2px 0 0 0 #e6e6e6, -2px 0 0 0 #e6e6e6, 0 3px 0 0 #e6e6e6, 0 -1px 0 0 #e6e6e6;
+
+}
+.stk-container .page-head{
+	width: 925px;
+    height: 18px;
+    color: #000;
+    padding-bottom: 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 15px;
+}
+.stk-container .page-head h3{
+	width: 630px;
+    height: 18px;
+    float: left;
+    line-height: 18px;
+    font-size: 26px;
+    font-weight: normal;
+}
+.stk-container .page-head p{
+	float: right;
+    background: url(../img/icon/lock-header.png) no-repeat 0 3px;
+    background-size: 10px 13px;
+    display: inline;
+    padding-left: 18px;
+    color: #666;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 20px;
+}
+.center{
+	width: 920px;
+}
+.center .loginbox{
+	float: left;
+    width: 450px;
+    padding: 50px 0 0 40px;
+    margin-left: 40px;
+}
+.loginbox .loginhead {
+    height: 30px;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+.loginbox .loginhead .title {
+    float: left;
+    font-size: 20px;
+    font-weight: normal;
+    color: #515151;
+}
+.validation-summary-errors, .field-validation-error {
+    color: red;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    color: red;
+    /* float: left; */
+    margin-top: -5px;
+}
+.rememberField {
+    margin-bottom: 30px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    display: block;
+    width: 330px;
+}
+.checkboxPic {
+    outline: none;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.check_chk i {
+    background-position: -31px -127px;
+    background-image: url(../img/icon/elements-02.png);
+    background-repeat: no-repeat;
+}
+.i_icon {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.normalInput {
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 330px;
+    height: 30px;
+    line-height: 22px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #dadada;
+    outline: none;
+    color: #474747;
+    overflow: visible;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.normalInput input,.mfinput {
+	outline：none; 
+	outline:medium;
+    font-size: 14px;
+    width: 322px;
+    padding: 1px 1px;
+    height: 28px;
+    padding-left: 8px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    box-shadow: inset 0 1px 4px #AAA;
+    -webkit-box-shadow: inset 0 1px 4px #AAA;
+    -moz-box-shadow: inset 0 1px 4px #AAA;
+}
+.normalInput .password {
+    float: left;
+    width: 322px;
+}
+.error {
+    display: none;
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    color: red;
+    float: left;
+    margin-top: -5px;
+}
+.fullBtnBlue {
+    display: inline-block;
+    height: 32px;
+    width: 332px;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    outline: none;
+    cursor: pointer;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+}
+.getpwd {
+    width: 130px;
+    float: right;
+}
+.getpwd a {
+    display: inline;
+    float: left;
+    color: #000;
+}
+.getpwd a:hover{
+	color: #ff0000;
+}
+.getpwd p {
+    display: inline;
+    float: left;
+}
+.splitline-or {
+    position: relative;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+    margin: 20px 0;
+    background: transparent url(../img/icon/passport.fg.png) no-repeat 0 0;
+}
+.splitline-or span {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    padding-left: 35%;
+    font-size: 14px;
+    line-height: 20px;
+    color: #909090;
+}
+.thirdparties {
+    position: relative;
+    _zoom: 1;
+    height: 40px;
+}
+.thirdparties .main-links {
+    overflow: hidden;
+    width: 480px;
+}
+.thirdparties .main-links li {
+    float: left;
+    margin-right: 106px;
+    
+}
+.thirdparties .ico-QQ, .thirdparties .ico-weibo, .thirdparties .ico-wechat, .thirdparties .ico-taobao {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../img/icon/ico_others.png) no-repeat 0 0;
+}
+.thirdparties .main-links em {
+    display: none;
+}
+.thirdparties .ico-wechat {
+    background-position: -180px 0;
+}
+.thirdparties .ico-weibo {
+    background-position: -45px 0;
+}
+.center .border{
+	float: left;
+    width: 8px;
+    height: 450px;
+    background: url(../img/icon/bg-signin-divider.png) no-repeat center;
+}
+.center .yqts{
+	float: left;
+    width: 280px;
+    padding: 50px 40px 0 40px;
+    margin-left: 20px;
+}
+.stk-container .center .yqts span {
+    font-size: 12px;
+    line-height: 22px;
+}
+.stk-container .center .yqts .pub {
+    width: 100%;
+}
+.stk-container .center .yqts .pub p {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+.stk-container .center .yqts .pub img {
+    width: 50%;
+    margin-left: 25%;
+}
+.stk-container .center .yqts .pub b {
+    display: block;
+    width: 100%;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+}
+/*注册页面*/
+.formLine {
+    color: #d9d9d9;
+    height: 20px;
+    display: inline-block;
+    border-left: 1px solid #dadada;
+    position: absolute;
+    right: 100px;
+    top: 5px;
+}
+.keycode {
+    width: 80px;
+    border: none;
+    outline: none;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    cursor: pointer;
+}

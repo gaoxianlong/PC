@@ -1,0 +1,23 @@
+.wrapper{
+	width: 100%;
+	height: 100%;
+	margin: 50px auto;
+}
+.answers-main{
+	width: 1200px;
+	margin: 70px auto 0;
+	padding: 0 60px;
+	min-height: 412px;
+}
+.answers-main ul{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.answers-main ul li{
+	width: 100%;
+	min-height: 412px;
+	border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.stk.dao.CommentDao">
+	<insert id="addComm" parameterType="Comment" >
+		insert into tcomment(id,content,addtimes,cid,uid,vid,uname) 
+		values(null,#{content},#{addtimes},#{cid},#{uid},#{vid},#{uname})
+	</insert>
+	<select id="selectComm" resultType="Comment" parameterType="java.lang.Integer">
+		SELECT c.*,u.HeadUrl,u.NickName FROM tuser u,tcomment c WHERE  vid=#{vid} AND c.uid=u.id ORDER BY addtimes DESC
+
+		
+	</select>
+</mapper>

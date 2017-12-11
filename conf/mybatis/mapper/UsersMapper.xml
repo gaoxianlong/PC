@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.stk.dao.LoginDao">
+
+	<select  id="selectPhone" resultType="Users" parameterType="java.lang.String">
+		select * from tuser where Telephone=#{Telephone}
+	</select>
+	<insert id="addUsersQQ" parameterType="WxUser">
+		insert into
+		twxuser(ID,nickName,sex,headUrl,qqid,registertime)
+		values(null,#{nickName},#{sex},#{headUrl},#{qqid},#{registertime})
+	</insert>
+	<select  id="selectUnionID" resultType="WxUser" parameterType="java.lang.String">
+		select * from twxuser where unionid=#{unionid}
+	</select>
+	<insert id="addUsersWX" parameterType="WxUser">
+		insert into
+		twxuser(ID,nickName,sex,headUrl,openid,city1,city2,registertime,unionid)
+		values(null,#{nickName},#{sex},#{headUrl},#{openid},#{city1},#{city2},#{registertime},#{unionid})
+	</insert>
+	
+	<select id="selectQQ" resultType="WxUser" parameterType="java.lang.String">
+	select * from twxuser where qqid=#{qqid}
+	</select>
+	<select id="selectWxID" parameterType="java.lang.Integer" resultType="Users">
+		select * from tuser where WXopendID=#{WXopendID}
+	</select>
+	<update id="updateWxID" parameterType="Users">
+		update tuser set WXopendID=#{WXopendID},NickName=#{NickName},Sex=#{Sex},City1=#{City1},City2=#{City2},
+		Unionid=#{Unionid},HeadUrl=#{HeadUrl} where ID=#{ID}
+	</update>
+	<update id="updataWxPhone" parameterType="WxUser">
+		update twxuser set Telephone=#{Telephone} where ID=#{ID}
+	</update>
+	<insert id="addWxToUser" parameterType="Users">
+		insert into
+		tuser(ID,NickName,Sex,HeadUrl,City1,City2,Registertime,Unionid,WXopendID,Telephone,Qqid)
+		values(null,#{NickName},#{Sex},#{HeadUrl},#{City1},#{City2},#{Registertime},#{Unionid},#{WXopendID},#{Telephone},#{Qqid})
+	</insert>
+	<update id="updatePassWord" parameterType="Users">
+		update tuser set Password=#{Password},Salt=#{Salt} where ID=#{ID}
+	</update>
+	<select id="selectQqidToUser" parameterType="java.lang.Integer" resultType="Users">
+		select * from tuser where Qqid=#{Qqid}
+	</select>
+</mapper>

@@ -1,0 +1,252 @@
+.header,.footer-con{
+	width: 1120px !important;
+}
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.shopping-title {
+	width: 100%;
+	height: 140px;
+	background: #ddd;
+}
+
+.title-con {
+	width: 1120px;
+	height: 140px;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+
+.title-con .myshopping {
+	width: 100%;
+	height: 50px;
+	
+}
+
+.title-con .myshopping h1 {
+	width: 200px;
+	height: 40px;
+	float: left;
+	margin-left: 50px;
+}
+
+.title-con .myshopping p {
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+	margin-right: 60px;
+}
+.shopping-con{
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+}
+/*订单内容*/
+.mykc{
+	width: 1120px;
+	height: 100%;
+	padding: 0 30px;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-bottom: 156px;
+}
+.mykc .table{
+	width: 100%;
+	min-height: 51px;
+}
+.mykc .table h4{
+	width: 100%;
+	height: 68px;
+	padding-top: 28px;
+}
+.mykc .table ul{
+	width: 100%;
+	height: 114px;
+	background: #f3f5f7;
+	padding: 20px 30px 0;
+	margin-bottom: 2px;
+}
+.mykc .table ul .list-con{
+	float: left;
+	width: 600px;
+}
+.mykc .table ul .list-con .list_img{
+	width: 128px;
+	height: 80px;
+	background: #ccc;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	float: left;
+}
+.mykc .table ul .list-con .list_text{
+	width: 200px;
+	height: 100%;
+	float: left;
+	margin: 15px 0 0 10px;
+    line-height: 18px;
+}
+.mykc .table ul .list_sum{
+	width: 200px;
+	float: left;
+	padding-top: 50px;
+    text-align: center;
+}
+/*底部价钱*/
+.bar-wrapper{
+    width: 100%;
+    height: 360px;
+    padding-top: 30px;
+    background: #fff;
+}
+/*是否用奖学金*/
+.bar-wrapper .bar-top{
+	width: 100%;
+	height: 112px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+.bar-wrapper .bar-top .jxj-choice{
+	padding: 20px 40px 0;
+	position: relative;
+}
+.bar-wrapper .bar-top .jxj-choice .choice-left{
+	width: 200px;
+	position: absolute;
+	top: 20px;
+	left: 40px;
+}
+.bar-wrapper .bar-top .jxj-choice .choice-left p{
+	width: 50%;
+	float: left;
+}
+.bar-wrapper .bar-top .jxj-choice .choice-left p:last-child{
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.bar-wrapper .bar-top .jxj-choice .choices{
+	position: absolute;
+	left: 50px;
+	top: 60px;
+	width: 200px;
+	height: 20px;
+}
+.bar-wrapper .bar-top .jxj-choice .choices input{
+	float: left;
+	margin-right: 10px;
+}
+.bar-wrapper .bar-top .jxj-choice .choices input span{
+	float: left;
+}
+.bar-wrapper .bar-top .jxj-choice .choice-right{
+	width: 100px;
+	text-align: right;
+	position: absolute;
+	top: 20px;
+	right: 40px;
+}
+.bar-wrapper .bar-top .jxj-choice .choice-right a{
+	color: #666;
+}
+/*价钱加减*/
+.bar-wrapper .bar-right{
+    float: right;
+    color: #3c3c3c;
+    
+}
+.bar-wrapper .bar-right strong{
+    color: #f40;
+}
+
+.bar-wrapper .bar-right .piece{
+    text-align: right;
+    min-width: 110px;
+    height: 30px;
+    line-height: 30px;
+}
+.bar-wrapper .bar-right .piece .piece_num{
+    display: inline-block;
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: tohoma,arial;
+}
+.bar-wrapper .bar-right .piece .total_text{
+	float: right;
+	width: 110px;
+	height: 30px;
+	font-weight: 400;
+    font-size: 16px;
+    font-family: Arial;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+.bar-wrapper .bar-right .totalMoney{
+    min-width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+.bar-wrapper .bar-right .totalMoney .total_text{
+    float: right;
+    padding: 0 2px;
+    height: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Arial;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+.bar-wrapper .bar-right .kczh-money,.bar-wrapper .bar-right .jxj-money{
+	text-align: right;
+}
+.bar-wrapper .bar-right .jxj-money{
+	margin-bottom: 30px;
+}
+.bar-wrapper .bar-right .nowMoney .totalMoney{
+	
+	height: 40px;
+    line-height: 40px;
+}
+.bar-wrapper .bar-right .calBtn{
+    float: right;
+}
+.bar-wrapper .bar-right .calBtn a{
+    display: block;
+    width: 90px;
+    height: 30px;
+    color: #fff;
+    background: #d21213;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/*支付页面的微信和支付宝支付*/
+.bar-wrapper .zf{
+	height: 200px;
+}
+.bar-wrapper .zf .jxj-choice{
+	padding-top: 40px;
+}
+.jxj-choice .choice-zf{
+	width: 220px;
+	height: 100px;
+	float: left;
+	padding: 34px 0 0 41px;
+	background-color: #f8fafc;
+	margin-right: 50px;
+}
+
+.bar-wrapper .zf .jxj-choice .zf-active{
+	background-image: url(../img/icon/payactive.png);
+}

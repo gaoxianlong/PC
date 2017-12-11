@@ -1,0 +1,191 @@
+.header,.footer-con{
+	width: 1200px !important;
+}
+.wrapper{
+	width: 100%;
+	height: 100%;
+}
+.banner-con{
+	width: 100%;
+	height: 420px;
+	background: #bfbfbf;
+}
+.banner{
+	width: 1200px;
+	height: 420px;
+	margin: 0 auto;
+	background: #aaa;
+	position: relative;
+}
+.banner .banner-title{
+	width: 559px;
+	height: 100px;
+	position: absolute;
+	left: 85px;
+	top: 96px;
+}
+.banner .banner-title h1{
+	width: 100%;
+	height: 45px;
+	line-height: 38px;
+	font-size: 38px;
+}
+.banner .banner-title p{
+	width: 100%;
+	line-height: 28px;
+	font-size: 16px;
+}
+.banner .pic{
+	width: 420px;
+	height: 60px;
+	position: absolute;
+	right: 70px; 
+	bottom: 60px;
+}
+.banner .pic .oldpic{
+	float: left;
+	width: 150px;
+	height: 60px;
+	text-align: center;
+}
+.banner .pic .oldpic p{
+	height: 32px;
+	font-size: 28px;
+	line-height: 32px;
+}
+.banner .pic .oldpic span{
+	font-size: 14px;
+	text-decoration: line-through;
+}
+.banner .pic .pic-btn{
+	float: right;
+	width: 260px;
+	height: 60px;
+}
+.banner .pic .pic-btn span{
+	float: left;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	background: #666;
+	color: #fff;
+	font-size: 22px;
+}
+.banner .pic .pic-btn span:last-child{
+	float: right;
+	width: 60px;
+    background: #777;
+    top: 0;
+    font-size: ;
+}
+/*组合包的课程导航*/
+.banner-nav{
+	width: 100%;
+	height: 58px;
+	margin-bottom: 20px;
+}
+.banner-nav nav{
+	width: 1200px;
+	height: 58px;
+	margin: 0 auto;
+	background: #fff;
+	text-align: center;
+	line-height: 58px;
+}
+.banner-nav nav a{
+	padding: 0 20px;
+	font-size: 18px;
+	color: #666;
+}
+.zhkc-wrap{
+	width: 1200px;
+	margin: 0 auto;
+}
+.zhkc-wrap .zhkc-classify{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	margin-bottom: 20px;
+}
+.zhkc-wrap h2{
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	font-size: 28px;
+	color: #666;
+	padding: 0 50px;
+	
+}
+.zhkc-wrap dl{
+	width: 100%;
+	height: 307px;
+	padding: 30px;
+	border-top: 1px solid #ccc;
+}
+.zhkc-wrap dl dt,.zhkc-wrap dl dd{
+	float: left;
+}
+.zhkc-wrap dl dt{
+	width: 400px;
+	height: 248px;
+	background: #ccc;
+}
+.zhkc-wrap dl dd{
+	width: 739px;
+	height: 248px;
+	padding-left: 20px;
+}
+.zhkc-wrap dl dd h5{
+	font-size: 24px;
+	height: 66px;
+	line-height: 66px;
+}
+.zhkc-wrap dl dd b{
+	font-size: 16px;
+	color: #b0b0b0;
+	font-weight: normal;
+}
+.zhkc-wrap dl dd p{
+	width: 569px;
+	height: 90px;
+	padding-top: 16px;
+	line-height: 28px;
+	font-size: 16px;
+	color: #666;
+}
+.zhkc-wrap dl dd .price{
+	width: 100%;
+	height: 60px;
+}
+.zhkc-wrap dl dd .price .price-old{
+	float: left;
+	width: 110px;
+	height: 60px;
+	text-align: center;
+	
+}
+.zhkc-wrap dl dd .price .price-old span{
+	font-size: 28px;
+	color: #999;
+}
+.zhkc-wrap dl dd .price .price-old span:last-child{
+	font-size: 16px;
+	color: #d7d7d7;
+	text-decoration: line-through;
+}
+.zhkc-wrap dl dd .price .price-tryplay{
+	float: right;
+	width: 150px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	background: #999;
+	font-size: 22px;
+}
+.zhkc-wrap dl dd .price .price-tryplay a{
+	color: #fff;
+}
+.footer{
+	margin-top: 30px;
+}

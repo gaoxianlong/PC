@@ -1,0 +1,199 @@
+﻿a:hover{text-decoration: none;}
+.header{
+	width: 1200px !important;
+}
+
+/*banner*/
+.banner{
+	width: 100%;
+	height: 420px;
+	background: #ebe7e6 url(../../img/banner/hlw.jpg) no-repeat center;
+}
+.fp-con{
+	background: #bfbfbf !important;
+}
+
+/*筛选*/
+.subpage-top,.subpage-wrap{
+	width: 1140px;
+	height: auto;
+	margin: 0 auto;
+	background: #fff;
+}
+.subpage-top{
+	margin-top: 80px;
+	margin-bottom: 40px;
+}
+.subpage-wrap{
+	background: #efefef;
+}
+.subpage-con{
+	width: 1080px;
+	height: auto;
+	margin: 0 auto;
+}
+.screen{
+	width: 100%;
+	height: auto;
+}
+.screen-content{
+	width: 100%;
+	height: auto;
+	padding: 4px 0;
+}
+.screen-content dl{
+	width: 100%;
+	min-height: 68px;
+	padding: 18px 0 8px;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+.screen-content dl:last-child{
+	border: none;
+}
+.screen-content dl dt{
+	float: left;
+	width: 68px;
+	min-height: 26px;
+	line-height: 26px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #000;
+}
+.screen-content dl dd{
+	float: left;
+	min-height: 26px;
+	width: 908px;
+}
+.screen-content dl dd a{
+	display: inline-block;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 8px;
+	margin-right: 16px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #666;
+}
+.screen-content dl dd a.on{
+	color: #fff;
+	background: #333;
+	font-weight: 700;
+}
+
+/*扶贫课程*/
+.rightfloat{
+	width: 1140px;
+	height: px;
+	padding: 40px 10px 40px 30px;
+	margin: 0 auto;
+	background: #fff;
+	margin-bottom: 60px;
+}
+
+.rightfloat .tabs-con .tabs-main ul li img{
+	border: 0;
+}
+
+/*扶贫弹窗*/
+.fpzc{
+	display: none;
+	width: 416px;
+	height: 454px;
+	position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -208px;
+    margin-top: -227px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #fff;
+    z-index: 1000;
+}
+.fpzctop{
+	width: 100%;
+	height: 212px;
+	background: url(../../img/icon/fptc.png) no-repeat center;
+	position: relative;
+	padding: 5px 5px 0;
+	border-bottom: 1px solid #f2f2f5;
+}
+.fpzctop .fptc-close{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 5px;
+	top: 5px;
+	line-height: 18px;
+	font-size: 30px;
+	text-align: center;
+	color: #666;
+}
+.fpzcmain{
+	width: 100%;
+	height: 143px;
+	padding: 20px 62px 0px;
+    border-bottom: 1px solid #f2f2f5;
+}
+.fpzcmain .fpzcyhm{
+	width: 100%;
+	height: 60px;
+	position: relative;
+}
+.fpzcmain .fpzcyhm form input:first-child{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 170px;
+	height: 40px;
+	padding-left: 10px;
+}
+.fpzcmain .fpzcyhm form input:last-child{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100px;
+	height: 40px;
+	color: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #ff0000;
+	border: 0;
+}
+.fpzcmain .fpzcyhm form p{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+    color: #ff0000;
+}
+.fpzcmain p{
+	width: 100%;
+	height: 64px;
+	line-height: 22px;
+	font-size: 12px;
+	color: #ccc;
+}
+.fpzc .fplink{
+	padding: 30px 52px;
+}
+.fpzc .fplink a{
+	display: block;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: #ff0000;
+	border: 1px solid #ff0000;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-align: center;
+}
+
+
+
+/*分页器*/
+.rightfloat .pager{
+	width: 520px;
+}

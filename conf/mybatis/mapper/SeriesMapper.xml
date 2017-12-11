@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.stk.dao.SeriesDao">
+
+	<!-- MP3 -->
+		<!-- total -->
+		<select id="getSeriesermptotal" resultType="Seriesmp">
+			select * from mpseries
+		</select>
+		
+		<select id="getSeriesermpyi" resultType="Seriesmp">
+			select * from mpseries where TypeValue=#{id}
+		</select>
+		
+		<select id="getSeriesermper" resultType="Seriesmp">
+			select * from mpseries where Type2Value=#{id}
+		</select>
+		
+		<select id="seltypename" resultType="java.lang.String">
+			select TypeName from mptype where id=#{id}
+		</select>
+		
+		<select id="wxgetMulvsanmp" resultType="Type">
+			select * from mptype where ParentID=#{id} order by layered asc
+		</select>
+	
+	<!-- MP3 -->
+
+	<insert id="addseries" parameterType="Series">
+		insert into
+		series(TypeValue,Type2Value,Type3Value,Title,PicURL,PicURL2,ThuPicURL,Remark,TeacherID,VideoCount,Collection,ClickRate,PmtsTot,IsValid,IsPrice,Price,
+		IsDiscount,RealPrice,CreateUser,TimeLimit,fupin,CreateTime,PublishTime)
+		values
+		(#{TypeValue},#{Type2Value},#{Type3Value},#{Title},#{PicURL},#{PicURL2},
+		#{ThuPicURL},#{Remark},#{TeacherID},#{VideoCount},#{Collection},#{ClickRate},#{PmtsTot},#{IsValid},#{IsPrice},#{Price},#{IsDiscount},#{RealPrice},
+		#{CreateUser},#{TimeLimit},#{fupin},#{CreateTime},#{PublishTime})
+
+	</insert>
+
+	<update id="upserieser" parameterType="Series">
+		update series set
+		Title=#{Title},PicURL=#{PicURL},PicURL2=#{PicURL2},ThuPicURL=#{ThuPicURL},Remark=#{Remark},TeacherID=#{TeacherID},VideoCount=#{VideoCount},
+		Collection=#{Collection},ClickRate=#{ClickRate},PmtsTot=#{PmtsTot},IsValid=#{IsValid},IsPrice=#{IsPrice},Price=#{Price},IsDiscount=#{IsDiscount},RealPrice=#{RealPrice},
+		TimeLimit=#{TimeLimit},fupin=#{fupin}
+		where ID=#{ID}
+
+	</update>
+
+	<update id="upseriessan" parameterType="Series">
+		update series set
+		Title=#{Title},PicURL=#{PicURL},PicURL2=#{PicURL2},ThuPicURL=#{ThuPicURL},Remark=#{Remark},TeacherID=#{TeacherID},VideoCount=#{VideoCount},
+		Collection=#{Collection},ClickRate=#{ClickRate},PmtsTot=#{PmtsTot},IsValid=#{IsValid},IsPrice=#{IsPrice},Price=#{Price},IsDiscount=#{IsDiscount},RealPrice=#{RealPrice},
+		TimeLimit=#{TimeLimit},fupin=#{fupin},
+		where ID=#{ID}
+
+	</update>
+
+
+	<select id="hsgetSeries" resultType="Series">
+
+		select * from series where
+		ID=#{id}
+
+	</select>
+	 
+	<insert id="addaccountvideo">
+		insert into
+		seriesvideo(SID,Title,FileName,VideoURL,ClickRate,ZanCts,IsValid,IsPrice,Sort,CreateTime,TeacherID,des,fupin)
+		values
+		<foreach collection="sec" item="se" separator=",">
+			(#{se.SID},#{se.Title},#{se.FileName},#{se.VideoURL},#{se.ClickRate},#{se.ZanCts},#{se.IsValid},#{se.IsPrice},#{se.Sort},#{se.CreateTime},#{se.TeacherID},#{se.des},#{se.fupin})
+		</foreach>
+	</insert> 
+	<select id="selectKey" resultType="Series" parameterType="java.lang.String">
+select s.search,s.ID,s.Title,s.ClickRate,s.Remark,s.PicURL,t.TypeName 
+from series s,TYPE t
+where s.Title LIKE "%" #{Title}"%" and s.publi = 1 and s.TypeValue=t.ID 
+		
+	</select>
+
+
+	<!-- <update id="uptypeyi" parameterType="Type"> update type set TypeName=#{TypeName},layered=#{layered} 
+		where ID=#{ID} </update> <select id="getVulner" resultType="Vulner"> select 
+		* from vulner </select> <select id="getdingBs" resultType="Vulner"> select 
+		* from vulner </select> <select id="getBasvulById" resultType="string"> select 
+		vul_id from basic where id=#{id} </select> <insert id="addBasic" parameterType="Basic" 
+		keyProperty="id" useGeneratedKeys="true"> insert into basic(real_name,ip,system,server,softver,vul_id) 
+		values(#{realName},#{ip},#{system},#{server},#{softver},#{vulner}) </insert> 
+		<insert id="addvulner" parameterType="Vulner"> insert into vulner(name) values(#{name}) 
+		</insert> <insert id="addvuls"> insert into vulnerability(name,sort,degree,suggest,bas_id) 
+		values <foreach collection="vuls" item="vul" separator=","> (#{vul.name},#{vul.sort},#{vul.degree},#{vul.suggest},#{vul.basiid}) 
+		</foreach> </insert> <update id="updateBas"> update basic set real_name=#{realName},ip=#{ip},system=#{system},server=#{server},softver=#{softver} 
+		where id=#{id} </update> <delete id="deleteBasById"> delete from basic where 
+		id=#{id} </delete> -->
+</mapper>

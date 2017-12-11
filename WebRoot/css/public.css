@@ -1,0 +1,721 @@
+body,p,h1,h2,h3,h4,h5,h6,p,ul,li,ol,li,dl,dt,dd,th,td{
+	padding: 0;
+	margin: 0;
+}
+body,textarea,select{
+	font-family: "微软雅黑";
+}
+ul,li,ol,li{
+	list-style: none;
+}
+em,i{
+	font-style: normal;
+}
+a:hover,a:active,a:visited,a:link{
+	text-decoration: none;
+}
+.cursor{
+	cursor: pointer;
+}
+img{
+	border: none;
+}
+/*去掉chrome默认记住输入内容时 出现的黄色背景色*/
+input:-webkit-autofill { 
+-webkit-box-shadow: 0 0 0px 1000px white inset; 
+} 
+input:focus{
+	outline:none;
+    border: 1px solid #666;
+}
+/*给input输入框的 placeholder 改变字体颜色*/
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ccc; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #ccc;
+}
+
+input:-ms-input-placeholder{
+    color: #ccc;
+}
+
+input::-webkit-input-placeholder{
+    color: #ccc;
+}
+/*清楚浮动*/
+.clearfix:after{
+	display: block;
+	clear: both;
+	content: '';
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+.clearfix{
+	zoom: 1;
+}
+*{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*文本超出显示省略号*/
+.ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*文本超出显示省略号*/
+.ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*媒体查询*/
+@media only screen and (min-width:1366px ) {
+	.header,.con,.icon,.bottom{
+		width: 1200px;
+		/*width: 1080px;*/
+		padding: 0 60px;
+	}
+	.stk-body{
+		width: 1100px !important;
+	}
+}
+@media only screen and (max-width:1365px) {
+	.header,.icon,.con,.bottom{
+		width: 980px;
+		/*width: 840px;*/
+		padding: 0 60px;
+	}
+	.stk-body{
+		width: 880px !important;
+	}
+}
+
+body{
+	background: #f8fafe;
+}
+.wrap{
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+}
+/*顶部导航*/
+.navheader{
+	background: #151515;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
+.header{
+	margin: 0 auto;
+	position: relative;
+}
+.header .logo{
+	position: absolute;
+	left: 2px;
+	top: 0;
+}
+.header .stk-menu{
+	position: absolute;
+	left: 140px;
+	top: 0;
+	width: 120px;
+	height: 50px;
+}
+.header .stk-menu .head-menu span:first-child{
+	font-size: 16px;
+}
+.header .stk-menu .head-menu span:last-child{
+	font-size: 12px;
+}
+.header .head-menu,.header #mymenu{
+	float: left;
+	width: 60px;
+	height: 50px;
+	line-height: 50px;
+	position: relative;
+}
+.header .head-menu>a,.header #mymenu>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+#my-form{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -180px;
+	margin-top: -17px;
+	padding: 0;
+	width: 359px;
+}
+.header .nav-login{
+	float: right;
+	width: auto;
+	height: 50px;
+	display: flex;
+}
+.header form div .input-group-addon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ccc;
+    z-index: 10;
+    height: 33px;
+}
+.header .nav-login li{
+	justify-content: space-between;
+	padding: 0 10px;
+	height: 50px;
+	line-height: 50px;
+	text-align: right;
+	
+}
+.header .nav-login li:first-child{
+	background: url() no-repeat left;
+}
+.header .nav-login li a{
+	color: #fff;
+	display: block;
+	padding: 0 5px;
+	height: 40px;
+}
+.header a:hover,.footer a:hover{
+	text-decoration: none;
+}
+.header a,.footer a{
+	color: #333;
+}
+/*顶部导航菜单栏*/
+.header .topmenu{
+	position: absolute;
+	width: 482px;
+	height: auto;
+	left: 0px;
+	top: 50px;
+	background: #fff;
+	/*border: 1px solid #ff0000;*/
+	border-top: none;
+	display: none;
+	box-shadow: 1px 0px 13px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 1px 0px 13px rgba(0,0,0,0.4);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.header .topmenu .allmenu{
+	width: 100px;
+	position: relative;
+}
+.header .topmenu .allmenu ul{
+	width: 100%;
+	background: #333;
+}
+.header .topmenu .allmenu ul li h5{
+	width: 100%;
+	height: 35px;
+	line-height: 34px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+.header .topmenu .allmenu ul li h5 span{
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: url(../img/icon/stk-icon.png) no-repeat;
+	background-position: 0px 0px;
+	margin-top: 7px;
+	margin-left: 14px;
+}
+.header .topmenu .allmenu ul li:nth-child(1) h5 span{
+	background-position: 0px 0px;
+}
+.header .topmenu .allmenu ul li:nth-child(2) h5 span{
+	background-position: 0px -20px;
+}
+.header .topmenu .allmenu ul li:nth-child(3) h5 span{
+	background-position: 0px -40px;
+}
+.header .topmenu .allmenu ul li:nth-child(4) h5 span{
+	background-position: 0px -60px;
+}
+.header .topmenu .allmenu ul li:nth-child(5) h5 span{
+	background-position: 0px -80px;
+}
+.header .topmenu .allmenu ul li:nth-child(6) h5 span{
+	background-position: 0px -100px;
+}
+.header .topmenu .allmenu ul li:nth-child(7) h5 span{
+	background-position: 0px -120px;
+}
+.header .topmenu .allmenu ul li:nth-child(8) h5 span{
+	background-position: 0px -140px;
+	
+}
+
+.header .topmenu .allmenu ul li h5 b{
+	float: left;
+	padding: 0 5px;
+	font-weight: normal;
+}
+.header .topmenu .allmenu ul li:last-child h5{
+	border-bottom: 0;
+}
+.header .topmenu .allmenu ul li a{
+	color: #ccc;
+	text-decoration: none;
+}
+.header .topmenu .allmenu ul li .listmenu{
+	display: none;
+	width: 382px;
+	position: absolute;
+	left: 100px;
+	top: 0;
+	height: 100%;
+	overflow: hidden;
+}
+.header .topmenu .allmenu ul li .menuactive{
+	background: #eee;
+	border-left: 3px solid #333;
+}
+
+.header .topmenu .allmenu ul li .menuactive a{
+	color: #333;
+}
+.header .topmenu .allmenu ul li .listactive{
+	display: block;
+}
+.header .topmenu .allmenu ul li .listmenu dl{
+	min-height: 35px;
+	border-bottom: 1px solid #ccc;
+}
+.header .topmenu .allmenu ul li .listmenu dl dt{
+	width: 80px;
+	min-height: 34px;
+	padding-right: 15px;
+	text-align: right;
+	line-height: 34px;
+	float: left;
+}
+.header .topmenu .allmenu ul li .listmenu dl dt a{
+	font-size: 14px;
+	color: #666;
+}
+.header .topmenu .allmenu ul li .listmenu dl dd{
+	float: left;
+	width: 300px;
+	min-height: 34px;
+}
+.header .topmenu .allmenu ul li .listmenu dl dd em{
+	display: inline-block;
+	height: 34px;
+	padding: 7px 0px;
+}
+.header .topmenu .allmenu ul li .listmenu dl dd em:last-child a{
+	border: none;
+}
+.header .topmenu .allmenu ul li .listmenu dl dd em a{
+	display: block;
+	font-size: 12px;
+	padding: 0 8px;
+	color: #999;
+	/*border-right: 1px solid #ccc;*/
+}
+/*扶贫入口*/
+.header .fplogo{
+	float: right;
+	margin-right: -50px;
+	margin-left: 20px;
+}
+.header .fplogo a{
+	display: block;
+	width: 96px;
+	height: 34px;
+	background: url(../img/icon/stk-icon.png) no-repeat;
+	background-position: -174px 0px;
+}
+.header .fplogo a:hover{
+	background-position: -174px -34px;
+}
+/*内容容器居中*/
+.content{
+	width: 100%;
+	height: auto;
+}
+.con{
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}
+.kctop a{
+	display: block;
+}
+/*顶部导航完毕*/
+/*odd奇数 even偶数*/
+.content:nth-child(even){ 
+	background: #fff;
+	box-shadow: 0px 3px 40px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0px 3px 40px rgba(0,0,0,.1);
+	-moz-box-shadow: 0px 3px 40px rgba(0,0,0,.1);
+	-o-box-shadow: 0px 3px 40px rgba(0,0,0,.1);
+}
+/*.content:nth-child(even){
+	background: #efefef;
+}*/
+
+/*底部*/
+.footer{
+	background: #fff;
+}
+.footer .footer-con{
+	height: 80px;
+}
+.footer .footer-con .section{
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 0;
+	padding: 0;
+}
+.footer .footer_left,.footer .footer_right{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+}
+.footer .footer_right{
+	float: right;
+}
+.footer .footer_left a,.footer .footer_right a{
+	display: block;
+	padding-right: 12px;
+	float: left;
+}
+.footer .footer_left a:hover{
+	color: #d21213;
+}
+.footer .footer_right a{
+	padding-right: 0;
+	padding-left: 12px;
+}
+.footer .footer-con .section .copy{
+	width: 50%;
+	line-height: 20px;
+}
+/*登录 注册*/
+.login-mask{
+	display: none;
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #000;
+    opacity: .7;
+}
+.login,.register-next,.forgetpass{
+	display: none;
+	width: 360px;
+	min-height: 360px;
+	position: fixed;
+    background: #fff;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    margin: -218px 0 0 -180px;
+    box-shadow: 0 0 3px rgba(0,0,0,.25);
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+}
+.login-header,.forgetpass .forget-head{
+	width: 100%;
+	height: 55px;
+	padding-top: 8px;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+.login-tab{
+	width: 100%;
+	padding-left:42px;
+	
+}
+.login-tab span{
+	display: inline-block;
+	padding: 0 2px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.login-tab span:first-child{
+	margin-right: 50px;
+}
+.login-tab .active-title{
+	border-bottom: 1px solid #d21313;
+	color: #d21313;
+}
+.btn-close{
+	position: absolute;
+	right: 25px;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+	background: url(../img/icon/close.png) no-repeat center;
+	font-size: 28px;
+	border: 0;
+	cursor: pointer;
+}
+.login-con{
+	width: 100%;
+	padding: 30px;
+	display: none;
+}
+.login-con .call,.login-con .pass,.login-con .yzm,.login-con .xym{
+	width: 100%;
+	height: 60px;
+}
+.login-con input{
+	width: 100%;
+	height: 40px;
+}
+.login-con form input{
+	padding-left: 10px;
+}
+.login-con form p,.forget-con form p{
+	color: #ff0000;
+}
+.login-con .forget{
+	padding-left: 80%;
+	margin-bottom: 20px;
+}
+.login .logreg-active{
+	display: block;
+}
+.login-con input:last-child{
+	border: 0;
+	font-size: 16px;
+	background: #999;
+	color: #fff;
+	padding: 0;
+}
+.login-con .qt-login{
+	height: 42px;
+	padding-top: 20px;
+}
+.login-con .qt-login span{
+	margin-left: 25px;
+}
+.login-con .xym input,.forget-con .xym input{
+	width: 180px;
+	height: 40px;
+	float: left;
+	margin-right: 10px;
+}
+.login-con .xym span,.forget-con .xym span{
+	float: left;
+	/*padding: 0 10px;*/
+	text-align: center;
+}
+.login-con .xym #codeSpan,.forget-con .xym #forget-codeSpan{
+	float: left;
+	width: 110px;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 700;
+	background: #ccc;
+	font-style: italic;
+	font-size: 18px;
+	text-align: center;
+	cursor: pointer;
+}
+.login-con .yzm input,.forget-con .yzm input{
+	width: 180px;
+	float: left;
+	margin-right: 10px;
+}
+.login-con .yzm .yzm-btn,.forget-con .yzm .yzm-btn{
+	float: left;
+	width: 110px;
+	height: 40px;
+	background: #d21313;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+}
+.login-con .stk-tk{
+	margin-bottom: 14px;
+	height: 24px;
+}
+.login-con .stk-tk span{
+	float: left;
+	height: 24px;
+	line-height: 24px;
+}
+.login-con .stk-tk span:first-child{
+	width: 20px;
+	margin-right: 5px;
+}
+
+.login-con .stk-tk span input{
+	float: left;
+	height: 20px;
+}
+/*完善资料*/
+.register-next{
+	top: 35%;
+}
+.register-next .reg-head{
+	width: 100%;
+	text-align: center;
+	height: 64px;
+	line-height: 64px;
+	color: #666;
+	font-size: 20px;
+	border-bottom: 1px solid #ccc;
+	
+}
+.register-next .reg-con,.forgetpass .forget-con{
+	width: 100%;
+	padding: 10px 30px;
+}
+.register-next .reg-con form div,.forgetpass .forget-con form div{
+	width: 100%;
+	height: 60px;
+}
+.register-next .reg-con form .sex,.register-next .reg-con form .birthday{
+	width: 48%;
+	float: left;
+}
+.register-next .reg-con form .birthday{
+	float: right;
+}
+.register-next .reg-con form input,.register-next .reg-con form select,.forget-con input{
+	width: 100%;
+	height: 42px;
+	padding-left: 10px;
+}
+
+.register-next .reg-con form select{
+	color: #666;
+}
+.register-next .reg-con form #tjzl{
+	width: 170px;
+	border: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #ddd;
+}
+.register-next .reg-con form .tjzl input{
+	float: left;
+	font-size: 20px;
+}
+.register-next .reg-con form .tjzl span{
+	display: block;
+	float: right;
+	width: 110px;
+	height: 42px;
+	background: #ddd;
+	line-height: 42px;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.register-next .reg-con form b{
+	display: block;
+	text-align: center;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+/*找回密码 */
+.forgetpass .forget-head{
+	padding-left: 30px;
+}
+.forgetpass .forget-head h4{
+	width: 50%;
+	float: left;
+	height: 34px;
+	line-height: 34px;;
+	font-size: 20px;
+}
+.forget-con form{
+    margin-bottom: 30px;
+}
+.forget-con form #forget-btn{
+	background: #999;
+	font-size: 18px;
+	color: #fff;
+}
+
+/*找不到视频的 弹窗*/
+.nofindvideo{
+	display:none;
+	width: 320px;
+	height: 250px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -160px;
+	margin-top: -125px;
+	padding-top: 20px;
+	z-index: 1000;
+	background: #fff;
+}
+.nofindvideo .nokc{
+	width: 320px;
+	height: 230px;
+	background: url(../img/icon/xiaoshou.png) no-repeat 30px 0px;
+}
+.nofindvideo .nokc p{
+	width: 170px;
+	height: 100px;
+	line-height: 28px;
+	font-size: 16px;
+	padding-top: 40px;
+	margin-left: 130px;
+	margin-bottom: 50px;
+}
+.nofindvideo .nokc span{
+	display: block;
+	width: 180px;
+	height: 30px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	margin: 0 auto;
+	background: #d21213;
+	cursor: pointer;
+}
+
+/*城市三联动*/
+.register-next .reg-con form .seat .info select{ width: 95px;height: 40px; background:#FFFFFF;}
+.register-next .reg-con form .seat .info #s_city{
+	/*width: 60%;*/
+	margin-bottom: 10px;
+}
+
+.register-next .reg-con form .seat .info{width: 300px;}
+.register-next .reg-con form .seat .info #show{ color:#3399FF; }
+.register-next .reg-con form .grade select{
+	width: 95px;
+}
+.register-next .reg-con form .grade input{
+	width: 95px;
+}

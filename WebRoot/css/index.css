@@ -1,0 +1,330 @@
+.wrapper{
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+}
+.banner{
+	width: 100%;
+	height: 420px;
+}
+.banner a{
+	display: block;
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+}
+.banner-con,.banner-con .bannerlist,.bannerlist .banner-item{
+	width: 100%;
+	height: 100%;
+}
+.banner-con .bannerlist{
+	position: relative;
+}
+.bannerlist .banner-item{
+	font-size: 25px;
+	text-align: center;
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: none;
+	opacity: 1;
+}
+
+.bannerlist .banner-item:nth-child(1){
+	background: #ebe7e6 url(../img/banner/hlw.jpg) no-repeat center;
+	z-index: 10;
+}
+.bannerlist .banner-item:nth-child(2){
+	background: #d8d5cc url(../img/banner/gkhx.jpg) no-repeat center;
+	z-index: 9;
+}
+.bannerlist .banner-item:nth-child(3){
+	background: #272526 url(../img/banner/jrzs.jpg) no-repeat center;
+	z-index: 8;
+}
+.bannerlist .banner-item:nth-child(4){
+	background: #2a2f32 url(../img/banner/sxky.jpg) no-repeat center;
+	z-index: 7;
+}
+.bannerlist .banner-item:nth-child(5){
+	background: #ffeaa9 url(../img/banner/tbsx.jpg) no-repeat center;
+	z-index: 6;
+}
+.bannerlist .banner-item:nth-child(6){
+	background: #329cac url(../img/banner/xgnyy.jpg) no-repeat center;
+	z-index: 5;
+}
+.bannerlist .banner-item:nth-child(7){
+	background: #ecf7ef url(../img/banner/xxyy.jpg) no-repeat center;
+	z-index: 4;
+}
+.bannerlist .banner-item:nth-child(8){
+	background: #e7eef4 url(../img/banner/yyzw.jpg) no-repeat center;
+	z-index: 3;
+}
+.bannerlist .banner-item:nth-child(9){
+	background: #ccc url(../img/banner/stkjs.jpg) no-repeat center;
+	z-index: 2;
+}
+.bannerlist .banner-item:nth-child(10){
+	background: #101928 url(../img/banner/stkxc.jpg) no-repeat center;
+	z-index: 1;
+}
+
+.banner-con .bannerlist .banneractive{
+	display: block;
+	z-index: 15;
+}
+.icon{
+	margin: 0 auto;
+	position: relative;
+}
+.icon .iconlist{
+	width: 240px;
+	height: 420px;
+	position: absolute;
+	right: 60px;
+	bottom: 0;
+	background: linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,.8) 17%,rgba(255,255,255,.9) 50%,rgba(255,255,255,.8) 88%,rgba(255,255,255,0) 100%);
+	z-index: 20;
+	padding-top: 45px;
+}
+.iconlist .icon-item{
+	width: 100%;
+	height: 28px;
+	padding: 0 10px 0 20px;
+	
+}
+.iconlist li a{
+	color: #666;
+	width: 100%;
+}
+.iconlist li a:hover{
+	text-decoration: none;
+}
+.iconlist li a p{
+	padding: 0 2px;
+	height: 100%;
+	font-size: 14px;
+	line-height: 28px;
+	float: left;
+	color: #000;
+}
+/*文本超出固定宽度时显示省略号*/
+.iconlist ul li p.cont{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.iconlist .iconactive{
+	background: #fff;
+	height: 80px;
+}
+.iconlist .iconactive a p{
+	float: none;
+	width: 100%;
+	height: 40px;
+	color: #333;
+}
+.iconlist .iconactive a p:first-child{
+	font-size: 22px;
+	line-height: 50px;
+	color: #ff0000;
+}
+
+/*内容   公用   kc-public.css*/
+/*课程分类*/
+.kcfl{
+	overflow: hidden;
+}
+.kcfl img{
+	transition: all 0.6s;
+}
+.kcfl img:hover{
+	transform: scale(1.3);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.kc{
+	position: relative;
+}
+.kc .kctop .kcfl{
+	position: relative;
+}
+.kc .kc_mask{
+	width: 100%;
+	height: 100%;
+    position: absolute;
+	left: 0;
+	top: 0;
+	padding: 36px 54px;
+}
+.kc .kcfl-title{
+	width: 98px;
+	height: 50px;
+	line-height: 48px;
+	text-align: center;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	font-size: 26px;
+	color: #fff;
+}
+.kc .kcmask{
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: right;
+	height: 0px;
+	line-height: 32px;
+	background: url(../img/icon/kcmask.png) no-repeat;
+	
+}
+.stk-body .tabs .only .kc .kcmask{
+	background: url(../img/icon/kcmask02.png) no-repeat center;
+}
+/*扶贫专题*/
+.con .fp{
+	display: block;
+	width: 100%;
+	height: 124px;
+	background: url(../img/fp.jpg) no-repeat center;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+/*学前课程*/
+/*小学课程*/
+.section .m_pos .stk-body .tabs .fir{
+	width: 200px;
+	height: 376px;
+	float: left;
+	margin-right: 20px;
+}
+.section .m_pos .stk-body .tabs .fir .only{
+	width: 200px;
+	height: 100%;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.section .m_pos .stk-body .tabs .fir .only a{
+	display: block;
+}
+.section .m_pos .stk-body .tabs .fir .only a:hover{
+	text-decoration: none;
+}
+.section .m_pos .stk-body .tabs .fir .only .kc{
+	height: 322px;
+	background: #eee url(../img/icon/picloading.png) no-repeat center;
+}
+.section .m_pos .stk-body .tabs .fir .only .kctop{
+	height: 100%;
+}
+/*中学课程*/
+.section .m_pos .stk-body .tabs .zxkc{
+	width: 420px;
+	height: 376px;
+	float: left;
+	margin-right: 20px;
+}
+.section .m_pos .stk-body .tabs .zxkc .only .kc{
+	width: 420px;
+	height: 322px;
+	background: #eee url(../img/icon/picloading.png) no-repeat center;
+}
+.section .m_pos .stk-body .tabs .zxkc .only .kctop{
+	height: 322px;
+}
+/*高中课程*/
+.section .m_pos .stk-body .tabs_thr{
+	width: 200px;
+	height: 100%;
+	margin-right: 20px;
+	float: left;
+}
+.section .m_pos .stk-body .zxkc .only{
+	width: 420px;
+	height: 100%;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.section .m_pos .stk-body .zxkc .only a{
+	display: block;
+}
+.section .m_pos .stk-body .zxkc .only a:hover{
+	text-decoration: none;
+}
+.section .m_pos .stk-body .zxkc .tabs_con li:last-child{
+	margin-right: 0;
+}
+/*检测页面滚动*/
+#mynav ul{
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#mynav ul li{
+	height: 30px;
+	padding: 0 8px;
+	background: #fff;
+	margin: 0;
+}
+
+#mynav a{
+	height: 30px;
+	line-height: 30px;
+	color: #a1a1a1;
+	padding: 0;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+#mynav ul li:last-child a{
+	border: none;
+}
+#mynav .mytop{
+	height: 44px;
+	background: #ccc;
+	padding: 2px 11px;
+	margin-top: 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#mynav .mytop a{
+	text-decoration: none;
+	height: 40px;
+	line-height: 20px;
+	color: #505050;
+}
+/*底部内容*/
+.bottom{
+	height: auto;
+}
+.bottom .section{
+	margin-bottom: 0;
+}
+.bottom .section .m_pos .butn{
+	margin-top: -14px;
+}
+.bottom .section .m_pos .stk-body{
+	height: 124px;
+}
+.bottom .section .m_pos .tabs{
+	height: 124px;
+}
+.bottom .section .m_pos .stk-body .tabs_con li{
+	height: 124px;
+	margin: 0;
+}
+.bottom .section .cksy{
+	width: 220px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: #999;
+	font-size: 22px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #d2d2d2;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+/*底部内容完毕*/

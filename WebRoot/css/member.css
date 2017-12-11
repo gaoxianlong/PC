@@ -1,0 +1,146 @@
+.vipcon{
+	width: 1120px;
+	height: 758px;
+	margin: 70px auto;
+	background: #fff;
+	box-shadow: ;
+	padding: 30px;
+}
+.viptop{
+	width: 1060px;
+	height: 417px;
+	padding: 17px 20px 0 50px;
+}
+.viptop .vipimg,.viptop .vipimg img{
+	width: 340px;
+	height: 340px;
+}
+.viptop .vipimg,.viptop .vipxq{
+	float: left;
+}
+.viptop .vipxq{
+	width: 650px;
+	height: 340px;
+	padding-left: 50px;
+}
+.viptop .vipxq h3{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 26px;
+}
+.viptop .vipxq h6,.viptop .vipxq h5{
+	width: 100%;
+	height: 14px;
+	line-height: 14px;
+	font-size: 12px;
+	font-weight: normal;
+	color: #666;
+	margin-bottom: 45px;
+}
+.viptop .vipxq h5{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.viptop .vipxq .viptime{
+	width: 100%;
+	height: 131px;
+	border-bottom: 1px solid #e5e5e5;
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	margin-bottom: 30px;
+}
+.viptop .vipxq .viptime li{
+	width: 180px;
+	height: 100px;
+	border: 1px solid #ccc;
+
+}
+.viptop .vipxq .viptime li.vip_active{
+	border: 0;
+	background-image: url(../img/icon/vipicon.png);
+}
+.viptop .vipxq .viptime li strong{
+	display: block;
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+}
+.viptop .vipxq .viptime li p{
+	width: 100%;
+	height: 16px;
+	line-height: 16px;
+	color: #747474;
+	text-align: center;
+}
+.viptop .vipxq .viptime li p em{
+	color: #d21213;
+	font-size: 16px;
+}
+.viptop .vipxq .viptime li span{
+	display: block;
+	text-align: center;
+	line-height: 32px;
+	font-size: 12px;
+	color: #808080;
+}
+.viptop .vipxq .vipbtn{
+	width: 180px;
+	height: 46px;
+	text-align: center;
+	line-height: 46px;
+	color: #fff;
+	background: #d21213;
+	font-size: 18px;
+}
+.vipicon{
+	
+	width: 1060px;
+	height: 311px;
+	
+}
+h4{
+	width: 1060px;
+	height: 67px;
+	line-height: 66px;
+	font-size: 26px;
+	border-bottom: 1px solid #e5e5e5;
+	padding-left: 50px;
+}
+.vipicon .vip_content{
+	width: 100%;
+	height: 244px;
+	
+}
+.vipicon .vip_content dl{
+	width: 33.3%;
+	height: 244px;
+	float: left;
+}
+.vipicon .vip_content dl dt{
+	width: 100%;
+	height: 102px;
+	
+}
+.vipicon .vip_content dl:first-child dt{
+	background: url(../img/icon/vipkwzs.png) no-repeat center 38px;
+}
+.vipicon .vip_content dl:nth-child(2) dt{
+	background: url(../img/icon/vipkc.png) no-repeat center 31px;
+}
+.vipicon .vip_content dl:nth-child(3) dt{
+	background: url(../img/icon/vipxxnr.png) no-repeat center 24px;
+}
+.vipicon .vip_content dl dd{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	font-size: 20px;
+	text-align: center;
+}

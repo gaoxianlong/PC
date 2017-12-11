@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.stk.dao.ZanDao">
+	<insert id="addzan" parameterType="Zan" >
+		insert into tzan(id,uid,vid,cid,qid,addtimes) 
+		values(null,#{uid},#{vid},#{cid},#{qid},#{addtimes})
+	</insert>
+	<!--按照用户和不同的功能查询是否点赞-->
+	<select id="selectComment" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select count(1) from tzan where uid=#{0} and cid=#{1}
+	</select>
+	<!--查询评论点赞总数-->
+	<select id="selectCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select count(1) from tzan where cid=#{cid}
+	</select>
+	<!--删除评论点赞总数-->
+	<delete id="deleteZan" parameterType="java.lang.Integer">
+		delete from tzan where uid=#{0} and cid=#{1} and vid=#{2}
+	</delete>
+	<!--删除视频点赞总数-->
+	<delete id="deleteZanvo" parameterType="java.lang.Integer">
+		delete from tzan where uid=#{0} and vid=#{1}
+	</delete>
+	<!--增加或减少视频点赞数量-->
+	<update id="addvideo" parameterType="java.lang.Integer">
+		update seriesvideo set
+		ZanCts=#{0}
+		where ID=#{1}
+	</update>
+	<!--查询视频点赞总数-->
+	<select id="selectZanV" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select ZanCts from seriesvideo where ID=#{ID}
+	</select>
+		<!--按照用户和不同的功能查询是否点赞-->
+	<select id="selectVideo" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select count(1) from tzan where uid=#{0} and vid=#{1}
+	</select>
+	<!--增加收藏*/-->
+	<insert id="addCollect" parameterType="Collect" >
+		insert into tcollect(id,uid,vid,addtimes) 
+		values(null,#{uid},#{vid},#{addtimes})
+	</insert>
+	<!--增加或减少视频收藏数量-->
+	<update id="addCollVideo" parameterType="java.lang.Integer">
+		update seriesvideo set
+		shoucts=#{0}
+		where ID=#{1}
+	</update>
+	<!--查询视频收藏总数-->
+	<select id="selectCollV" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select shoucts from seriesvideo where ID=#{ID}
+	</select>
+	<!--按照用户和不同的功能查询是否收藏-->
+	<select id="selectCollect" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select count(1) from tcollect where uid=#{0} and vid=#{1}
+	</select>
+	<!--/**减少收藏*/-->
+	<delete id="deleteCollect" parameterType="java.lang.Integer">
+		delete from tcollect where uid=#{0} and vid=#{1}
+	</delete>
+	<select id="selectCollectAll" resultType="Collect" parameterType="java.lang.Integer">
+			select p.uid,p.addtimes,p.vid,sv.Sort,sv.SID,s.Title,s.PicURL,s.ID from tcollect p,seriesvideo sv,series s where uid=#{uid} and p.vid=sv.ID and sv.SID=s.ID order by p.addtimes DESC	
+	</select>
+	
+</mapper>

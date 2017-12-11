@@ -1,0 +1,92 @@
+.header{
+	width: 1200px !important;
+}
+.header .head-menu{
+	width: 600px;
+}
+.header .head-menu a{
+	float: left;
+	width: 84px;
+}
+.wrapper{
+	width: 100%;
+	height: 100%;
+}
+.wrapper .about-top{
+	width: 100%;
+	height: 420px;
+	background: #2b303a url(../../img/icon/swhz.png) no-repeat center;
+	margin-bottom: 20px;
+}
+.about-top .top-banner{
+	width: 1200px;
+	height: 420px;
+	margin: 0 auto;
+}
+.coo-con{
+	width: 100%;
+	height: 800px;
+	margin-bottom: 50px;
+}
+.coo-con .coo-main{
+	width: 1200px;
+	height: 800px;
+	margin: 0 auto;
+}
+.coo-con .coo-main ul{
+	width: 100%;
+	height: 800px;
+	background: #fff;
+}
+.coo-con .coo-main ul li{
+	width: 100%;
+	height: 159px;
+	border-bottom: 1px solid #ccc;
+}
+.coo-con .coo-main ul li:last-child{
+	border-bottom: 0;
+}
+.coo-con .coo-main ul li .floatleft{
+	float: left;
+	width: 750px;
+	height: 100%;
+	padding: 40px 0 0 40px;
+}
+.coo-con .coo-main ul li .floatleft h5{
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+	padding-left: 10px;
+	border-left: 2px solid #000;
+	margin-bottom: 28px;
+}
+.coo-con .coo-main ul li .floatleft h6{
+	height: 32px;
+	line-height: 32px;
+	font-size: 12px;
+	padding-left: 15px;
+}
+.coo-con .coo-main ul li .floatleft p{
+	padding: 16px 0 0 15px;
+}
+.coo-con .coo-main ul li .floatleft p span{
+	display: inline-block;
+	width: 190px;
+	height: 16px;
+	font-size: 16px;
+	font-size: 16px;
+}
+.coo-con .coo-main ul li .floatleft p span:last-child{
+	width: 280px;
+}
+.coo-con .coo-main ul li .floatright{
+	float: right;
+	width: 370px;
+	height: 100%;
+	padding-top: 28px;
+}
+.coo-con .coo-main ul li .floatright p{
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+}
