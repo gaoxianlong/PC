@@ -22,6 +22,12 @@ public class SeriesService {
 	private SeriesDao seriesDao;
 	//MP3
 			//total
+	public List<Seriesmp> getCarouselfigure(){
+		return seriesDao.getCarouselfigure();
+	}
+	public List<Seriesmp> getmppushone(Integer id){
+		return seriesDao.getmppushone(id);
+	}
 	public List<Seriesmp> getSeriesermptotal(){
 		return seriesDao.getSeriesermptotal();
 	}
@@ -39,8 +45,6 @@ public class SeriesService {
 	}
 	
 	//MP3
-	
-	
 	
 	public void addseries(Series series){
 		seriesDao.addseries(series);

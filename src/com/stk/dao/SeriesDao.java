@@ -12,6 +12,8 @@ public interface SeriesDao {
 
 		//MP3
 		//total
+	public List<Seriesmp> getCarouselfigure();
+	public List<Seriesmp> getmppushone(Integer id);
 	public List<Seriesmp> getSeriesermptotal();
 	public List<Seriesmp> getSeriesermpyi(Integer id);
 	public List<Seriesmp> getSeriesermper(Integer id);

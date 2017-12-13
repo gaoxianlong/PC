@@ -102,11 +102,6 @@ public class SelMuluController {
 			type3 = selTypeService.getMulvsan(type2.get(t).getID());
 			
 			asd.addAll(type3);
-			
-			
-			
-			
-			
 		}
 
 		 PageHelper.startPage(startpage, 16);
@@ -116,16 +111,13 @@ public class SelMuluController {
 		
 		 //
 			
-
-			 map.put("seriestuijian", seriests);
-			 //
+		map.put("seriestuijian", seriests);
+		//
 
 		map.put("info", pageInfo);
 		map.put("series", seriests);
-		
 		map.put("totall2", 0);
 		map.put("totall3", 0);
-			
 		point=id;
 	}
 	
@@ -148,17 +140,12 @@ public class SelMuluController {
 			point2=id;
 			
 			 PageHelper.startPage(startpage, 16);
-			series=selTypeService.getSerieser(id);
+			 series=selTypeService.getSerieser(id);
 			 PageInfo<Series> pageInfo = new PageInfo<Series>(series);
-			 seriests = pageInfo.getList();
-			 
-			 
-			 
+			 seriests = pageInfo.getList(); 
 			 
 			 //
 			 
-			
-		
 			 map.put("seriestuijian", seriests);
 			 //
 

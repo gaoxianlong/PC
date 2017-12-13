@@ -238,9 +238,11 @@ public class Seriesmp {
 	public void setFupin(int fupin) {
 		this.fupin = fupin;
 	}
+	
+	
 	@Override
 	public String toString() {
-		return "Series [ID=" + ID + ", TypeValue=" + TypeValue
+		return "Seriesmp [ID=" + ID + ", TypeValue=" + TypeValue
 				+ ", Type2Value=" + Type2Value + ", Type3Value=" + Type3Value
 				+ ", Title=" + Title + ", PicURL=" + PicURL + ", PicURL2="
 				+ PicURL2 + ", ThuPicURL=" + ThuPicURL + ", PublishTime="
@@ -251,10 +253,10 @@ public class Seriesmp {
 				+ ", Price=" + Price + ", IsDiscount=" + IsDiscount
 				+ ", RealPrice=" + RealPrice + ", CreateTime=" + CreateTime
 				+ ", TimeLimit=" + TimeLimit + ", fupin=" + fupin + ", search="
-				+ search + ", fullname=" + fullname + ", publi=" + publi + "]";
+				+ search + ", fullname=" + fullname + ", publi=" + publi
+				+ ", ta=" + ta + ", tb=" + tb + ", tc=" + tc + ", writer="
+				+ writer + ", bg=" + bg + "]";
 	}
-	
-	
 	public Seriesmp(){
 		
 		

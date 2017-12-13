@@ -61,8 +61,7 @@ public class MpController {
 				map.put("tyer", tyer);
 				map.put("seriesmp", seriesmp);
 				
-				// 底部导航
-				map.put("menupoint", 5);
+			
 
 				return "null";
 	}

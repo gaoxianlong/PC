@@ -4,6 +4,17 @@
 <mapper namespace="com.stk.dao.SeriesDao">
 
 	<!-- MP3 -->
+		
+		<!-- 轮播图 -->
+		<select id="getCarouselfigure" resultType="Seriesmp">
+			select * from mpseries where fupin=1
+		</select>
+		
+		<!-- 播放次数最多的 -->
+		<select id="getmppushone" resultType="Seriesmp">
+			SELECT *FROM mpseries  WHERE TypeValue = #{id} ORDER BY ClickRate DESC LIMIT 3
+		</select>
+		
 		<!-- total -->
 		<select id="getSeriesermptotal" resultType="Seriesmp">
 			select * from mpseries

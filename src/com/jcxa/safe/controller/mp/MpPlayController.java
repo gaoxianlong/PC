@@ -139,11 +139,11 @@ public class MpPlayController {
 
 //视频点赞
 
-//boolean flag = this.zanService.selectVideoService(user.getID(), vid);
-//Integer voZan = this.zanService.selectZanVService(vid);
-//System.out.println("视频点赞+++++++++" + voZan);
-//map.put("voZan", voZan);
-//map.put("flag", Boolean.valueOf(flag));
+boolean flag = this.zanService.selectVideoService(user.getID(), vid);
+Integer voZan = this.zanService.selectZanVService(vid);
+System.out.println("视频点赞+++++++++" + voZan);
+map.put("voZan", voZan);
+map.put("flag", Boolean.valueOf(flag));
 		
 		
 		

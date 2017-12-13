@@ -14,21 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 import test.EncoderHandler;
-
-import com.stk.entity.Backuser;
-import com.stk.service.BackService;
 import com.stk.util.MD5Util;
 
 @Controller
 public class BackController {
 	protected Logger log = Logger.getLogger(BackController.class);
-	@Autowired
-	private BackService backService;
+	
   
 	@RequestMapping(value="/pcimage")
-	
 	public void loginadmin(HttpServletRequest request,HttpServletResponse response) {
 		 String content = "http://baidu.com";  
 	        EncoderHandler encoder = new EncoderHandler();  

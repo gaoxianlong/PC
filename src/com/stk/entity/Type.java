@@ -54,6 +54,12 @@ public class Type implements java.io.Serializable {
 	public void setIdentify(String identify) {
 		Identify = identify;
 	}
+	@Override
+	public String toString() {
+		return "Type [ID=" + ID + ", TypeName=" + TypeName + ", ParentID="
+				+ ParentID + ", Sort=" + Sort + ", Identify=" + Identify
+				+ ", children=" + children + "]";
+	}
 	
 	
 	
