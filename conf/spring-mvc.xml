@@ -32,11 +32,11 @@
 	<bean class="Interceptors.PlayInterceptor"/>
 	</mvc:interceptor>
 	</mvc:interceptors>
-	
+	<!--  
 	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
     	<property name="defaultErrorView" value="/test.jsp"/>
     	<property name="exceptionAttribute" value="ex"/>    
-	</bean>
+	</bean>-->
 	<!-- 启动SpringMVC的注解功能 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<mvc:default-servlet-handler/>

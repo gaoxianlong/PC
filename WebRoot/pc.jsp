@@ -2,7 +2,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-String aa = request.getParameter("vipso");
+//String aa = request.getParameter("vipso");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -21,11 +21,46 @@ String aa = request.getParameter("vipso");
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
-
+<script type="text/javascript" src="jscript/jquery-2.0.3.js"></script>
+ <script>
+		  function jso() {
+		 // alert("55");
+		 $.ajax({
+						url : "http://127.0.0.1:8080/STK/mpjss",
+						type : "POST",
+						
+						data : {
+							"seriesID" : 22,	
+						},
+						success : function(data) {
+							var arry = data.lsvideo;
+							var arrydq = data.itemvo;
+						$('#bgh2').html('title：'+data.title);
+						$('#bgh3').html('封面：'+data.bg);
+						
+						var arry = data.lsvideo;
+						var arrydq = data.itemvo;
+						$('#list').empty();
+						$.each(arry,function(){
+							$('<li><span>id:'+this.id+'</span><br/><span>title:'+this.title+'</span><br/><span>url:'+this.videoURL+'</span><li>').appendTo($('#list'));
+						});
+						
+						$('#dqbf').empty();
+						$('<em>id:'+arrydq.id+'</em><br/><em>title:'+arrydq.title+'</em><br/><em>url:'+arrydq.videoURL+'</em><br/>').appendTo($('#dqbf'));
+												},
+						error : function(res) {
+							//alert(res.responseText);
+							alert("0000000");
+						}
+					});
+		 }
+		 </script>
   </head>
   
   <body>
   <center>
+  
+  <!-- 
   <img  style="height:120px;width:120px" src="pcorder?vipso=${vipso }&seriesID=${seriesID }&pric=${pric }&ordernum=${ordernum }" />
 		
 		<input type="text" value="${ordernum }">
@@ -34,6 +69,15 @@ String aa = request.getParameter("vipso");
 		<input type="text" value="${pric }">
 		
 		iiii
+		 -->
+		 
+		 
+		 <div onclick="jso()" style="height:100px;width:100px;color:red;">hhhhhhhhhh</div>
+		 
+		 <div id="bgh2"></div>
+		 <div id="bgh3"></div>
+		 <div id="list"></div>
+		 <div id="dqbf"></div>
 		
 		</center>
   </body>
