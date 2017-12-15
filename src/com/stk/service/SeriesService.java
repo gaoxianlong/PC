@@ -21,25 +21,32 @@ public class SeriesService {
 	@Autowired
 	private SeriesDao seriesDao;
 	//MP3
-			//total
-	public List<Seriesmp> getCarouselfigure(){
-		return seriesDao.getCarouselfigure();
+			
+	//轮播图 音频文件
+	public List<Seriesmp> getCarouselfigure(Integer id){
+		return seriesDao.getCarouselfigure(id);
 	}
+	//推荐 音频文件
 	public List<Seriesmp> getmppushone(Integer id){
 		return seriesDao.getmppushone(id);
 	}
+	//total 所有音频文件
 	public List<Seriesmp> getSeriesermptotal(){
 		return seriesDao.getSeriesermptotal();
 	}
+	//根据 TypeValue 查询一级菜单的音频
 	public List<Seriesmp> getSeriesermpyi(Integer id){
 		return seriesDao.getSeriesermpyi(id);
 	}
+	//根据 Type2Value 查询二级菜单的音频
 	public List<Seriesmp> getSeriesermper(Integer id){
 		return seriesDao.getSeriesermper(id);
 	}
+	//查询菜单的名称
 	public String seltypename(Integer id){
 		return seriesDao.seltypename(id);
 	}
+	//根据 ParentID 查询下一级菜单的名称
 	public List<Type> wxgetMulvsanmp(Integer id){
 		return seriesDao.wxgetMulvsanmp(id);
 	}

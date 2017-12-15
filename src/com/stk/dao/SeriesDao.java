@@ -11,10 +11,14 @@ import com.stk.entity.Seriesvideo;
 public interface SeriesDao {
 
 		//MP3
-		//total
-	public List<Seriesmp> getCarouselfigure();
+		
+	//一级推荐(系统推荐的音频，后台系统录入指定标识)
+	public List<Seriesmp> getCarouselfigure(Integer id);
+	//一级菜单(播放次数最多的音频)
 	public List<Seriesmp> getmppushone(Integer id);
+	//total
 	public List<Seriesmp> getSeriesermptotal();
+	
 	public List<Seriesmp> getSeriesermpyi(Integer id);
 	public List<Seriesmp> getSeriesermper(Integer id);
 	public String seltypename(Integer id);

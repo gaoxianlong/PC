@@ -9,9 +9,11 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.stk.entity.Playitems;
 import com.stk.entity.Playrecord;
 import com.stk.entity.Seriesmp;
@@ -176,9 +178,10 @@ map.put("flag", Boolean.valueOf(flag));
 	}
 	
 	// json
-	@RequestMapping(value = "/mpplayjson")
+	@RequestMapping(value = "/mpplayjson",method = { RequestMethod.GET })
 	@ResponseBody
-	public Playitems mpplayjson(Map<String, Object> map, HttpSession session,
+	public Object  mpplayjson(HttpSession session,
+			@RequestParam(value = "callback") String callback,
 			@RequestParam(value = "seriesID") Integer seriesID,
 			@RequestParam(value = "id", required = false) Integer id
 			) {
@@ -307,8 +310,9 @@ map.put("flag", Boolean.valueOf(flag));
 									item.setNowserid(seriesID);
 									//当前音频列表的数量
 									item.setSize(size);
-							
-							return item;
+									  	JSONPObject jsonpObject = new JSONPObject(callback,item) ;
+								        return jsonpObject ;
+							//return item;
 
 	}
 	

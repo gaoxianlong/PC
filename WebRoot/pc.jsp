@@ -23,8 +23,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script type="text/javascript" src="jscript/jquery-2.0.3.js"></script>
  <script>
+ 
+ 
+ 
+        $(document).ready(function(){
+            $.ajax({
+                type: "get",
+                async: false,
+                url: "http://127.0.0.1:8080/testjson/mpsort?id=0",
+                dataType: "jsonp",
+                jsonp: "callback",//一般默认为:callback
+                jsonpCallback:"success_jsonpCallback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+                success: function(data){
+                    /**
+                     * 获得服务器返回的信息。
+                     * 可以做具体的业务处理。
+                     */
+                    //alert('标题：ID： ' + json.title + ' ，背景： ' + json.bg + '。');
+                    	alert("55");
+                },
+                error: function(){
+                    alert('fail');
+                }
+            });
+        });
 		  function jso() {
 		 // alert("55");
+		 
 		 $.ajax({
 						url : "http://127.0.0.1:8080/STK/mpjss",
 						type : "POST",
@@ -60,19 +85,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <center>
   
-  <!-- 
+<!-- 
   <img  style="height:120px;width:120px" src="pcorder?vipso=${vipso }&seriesID=${seriesID }&pric=${pric }&ordernum=${ordernum }" />
-		
 		<input type="text" value="${ordernum }">
 		<input type="text" value="${vipso }">
 		<input type="text" value="${seriesID }">
 		<input type="text" value="${pric }">
-		
-		iiii
-		 -->
-		 
-		 
-		 <div onclick="jso()" style="height:100px;width:100px;color:red;">hhhhhhhhhh</div>
+-->
 		 
 		 <div id="bgh2"></div>
 		 <div id="bgh3"></div>

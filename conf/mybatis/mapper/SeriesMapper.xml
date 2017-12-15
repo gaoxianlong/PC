@@ -7,12 +7,12 @@
 		
 		<!-- 轮播图 -->
 		<select id="getCarouselfigure" resultType="Seriesmp">
-			select * from mpseries where fupin=1
+			select * from mpseries where fupin=1 and TypeValue = #{id}
 		</select>
 		
 		<!-- 播放次数最多的 -->
 		<select id="getmppushone" resultType="Seriesmp">
-			SELECT *FROM mpseries  WHERE TypeValue = #{id} ORDER BY ClickRate DESC LIMIT 3
+			SELECT *FROM mpseries  WHERE TypeValue = #{id} ORDER BY ClickRate DESC LIMIT 5
 		</select>
 		
 		<!-- total -->

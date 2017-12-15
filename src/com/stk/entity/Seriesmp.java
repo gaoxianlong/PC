@@ -11,14 +11,14 @@ public class Seriesmp {
  * 课程的封面
  * 
  */
-	private int ID;
-	private String TypeValue;
-	private String Type2Value;
-	private String Type3Value;
-	private String Title;
-	private String PicURL;
+	private int ID;//主键ID
+	private String TypeValue;//一级菜单id
+	private String Type2Value;//二级菜单id
+	private String Type3Value;//三级菜单Id
+	private String Title;//封面标题
+	private String PicURL;//封面图片
 	private String PicURL2;
-	private String ThuPicURL;
+	private String ThuPicURL;//封面图片（备用，此次不用）
 	private Date PublishTime;
 	private String Remark;//描述
 	private int TeacherID;//讲师
@@ -33,7 +33,7 @@ public class Seriesmp {
 	private int RealPrice;//实际价格
 	private Date CreateTime;//创建时间
 	private int TimeLimit;//购买有效天数
-	private int fupin;//1:扶贫 0：未扶贫
+	private int fupin;//1:推荐 0：未推荐
 	private String search;
 	private String fullname;
 	private String publi;

@@ -10,7 +10,7 @@ public class Type implements java.io.Serializable {
  * 
  */
 	private static final long serialVersionUID = 1L;
-	private int ID;
+	private int ID;//主键ID
 	private String TypeName;//目录名称
 	private int ParentID;//父类ID
 	private String Sort;//目录级别
