@@ -1,8 +1,11 @@
 package com.stk.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.stk.entity.Order;
+import com.stk.entity.OrderandSeries;
 import com.stk.entity.Wxorder;
 
 
@@ -24,6 +27,8 @@ public interface VipDao {
 	
 	public void addvip(Wxorder wxorder);
 	public void addorder(Order order);
+	//查询用户自己单个购买的课程订单
+	public List<OrderandSeries> selorderandk(@Param("id")Integer id);
 	
 	
 }

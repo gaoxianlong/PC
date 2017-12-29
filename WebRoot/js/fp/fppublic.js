@@ -26,12 +26,19 @@ $('#fpzc-btn').click(function(){
 			}
 	});
 });
-
+//小写转大写，函数封装
+function toUpperCase(str){
+	 str = str.toUpperCase();
+	 return str;
+	}
 
 //优惠码验证
 function yhm(obj){
-	var Pval = obj.val();
+	var stk=obj.val().substring(0,3);
+	var stkold = obj.val().substring(3);
+	var Pval = toUpperCase(stk)+stkold;
 	
+	alert(Pval);
 	reg1 = /^STK\d{15}$/;
   
   if (Pval == '') {

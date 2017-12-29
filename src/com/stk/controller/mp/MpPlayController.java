@@ -181,7 +181,7 @@ map.put("flag", Boolean.valueOf(flag));
 	@RequestMapping(value = "/mpplayjson",method = { RequestMethod.GET })
 	@ResponseBody
 	public Object  mpplayjson(HttpSession session,
-			@RequestParam(value = "callback") String callback,
+			@RequestParam(value = "callback",required = false) String callback,
 			@RequestParam(value = "seriesID") Integer seriesID,
 			@RequestParam(value = "id", required = false) Integer id
 			) {

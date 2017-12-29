@@ -108,8 +108,8 @@ function changes() {
 //
 function wxbd(){
 	$('#wxtel-form').submit(function(e){
-		alert(vcodeCheck())
-		alert(cc())
+		
+		
     	//判断 手机号 短信验证码只要有一个没有填或选中 就注册失败
 		if(!checkPhone($("#myUserName"))||!vcodeCheck()||!cc()){
 //		    console.log(!checkPhone($("#myUserName")),!checkCode());

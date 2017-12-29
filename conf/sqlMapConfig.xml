@@ -59,6 +59,7 @@
 		<typeAlias type="com.stk.entity.Seriesvideo" alias="Seriesvideo" />
 		<typeAlias type="com.stk.entity.Type" alias="Type" />
 		<typeAlias type="com.stk.entity.Order" alias="Order" />
+		<typeAlias type="com.stk.entity.OrderandSeries" alias="OrderandSeries" />
 		<typeAlias type="com.stk.entity.Wxorder" alias="Wxorder" />
 		<typeAlias type="com.stk.entity.Playrecord" alias="Playrecord" />
 		<typeAlias type="com.stk.entity.Users" alias="Users" />

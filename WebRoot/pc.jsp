@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             $.ajax({
                 type: "get",
                 async: false,
-                url: "http://127.0.0.1:8080/testjson/mpsort?id=0",
+                url: "http://127.0.0.1:8080/STK/selorderandk",
                 dataType: "jsonp",
                 jsonp: "callback",//一般默认为:callback
                 jsonpCallback:"success_jsonpCallback",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
@@ -40,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      * 可以做具体的业务处理。
                      */
                     //alert('标题：ID： ' + json.title + ' ，背景： ' + json.bg + '。');
-                    	alert("55");
+                   alert(data.pageInfo.list[2].id+"  "+data.pageInfo.list[2].createTime.toLocaleString( )+" "+data.pageInfo.list[2].overtime.toLocaleString( )+" "+data.pageInfo.list[2].outtradeno);
                 },
                 error: function(){
                     alert('fail');

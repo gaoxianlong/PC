@@ -1,4 +1,10 @@
-﻿
+﻿//搜索框获取焦点
+$('.form-text').focus(function(){
+	$(this).next().addClass('submit-focus');
+});
+$('.form-text').blur(function(){
+	$(this).next().removeClass('submit-focus');
+});
  //登录注册
 $('.login-tab span').on('click',function(){
 	$('.login-tab span').removeClass('active-title');
@@ -85,12 +91,15 @@ $('#RememberMe').change(function(){
 $('.login-btn').click(function(){
 	var phone=$("#UserName").val();
 	var pwd=$("#login-pass").val();
+	
 		if(!checkPhone($("#UserName"))||!checkPass($("#login-pass"))){
 			e.preventDefault();
             alert('登录失败');
             console.log(checkPhonedl($("#UserName")),checkPass($("#login-pass")));
 		}else{
 			$.post("selectphone","telephone="+phone+"&password="+pwd,function(date){
+				
+				
 				if(date.length>4){
 					$("#passid").html("您的手机号或者密码输入错误。");
 			      
@@ -107,7 +116,8 @@ $('.login-btn').click(function(){
 		            	$.cookie("username-stk", "", { expires: -1 });
 		            	$.cookie("password-stk", "", { expires: -1 });
 		            }
-					location.href ="getmenuindex.action";	
+					//location.href ="getmenuindex.action";	
+				location.reload();	
 				}
 			});
 		}
@@ -597,6 +607,7 @@ function forgetchanges() {
 
 //优惠码失去焦点
 $('#preferential').blur(function(){
+	
 	yhm($(this));
 });
 //优惠码获取焦点
@@ -604,12 +615,19 @@ $('#preferential').focus(function(){
 	$(".error2").hide();
 	$(".error2").hide();
 });
-
+//小写转大写，函数封装
+function toUpperCase(str){
+	 str = str.toUpperCase();
+	 return str;
+	}
 
 //优惠码验证
 function yhm(obj){
-	var Pval = obj.val();
 	
+	var stk=obj.val().substring(0,3);
+	var stkold = obj.val().substring(3);
+	var Pval = toUpperCase(stk)+stkold;
+	alert(Pval);
 	reg1 = /^STK\d{15}$/;
     
     
@@ -651,3 +669,11 @@ function yhm(obj){
     }
     return false;
 }
+//鼠标移入VIP效果
+$('.nav-vip a').hover(function(){
+	$(this).css('color','#d21213');
+	$(this).next().slideDown();
+},function(){
+	$(this).css('color','#fff');
+	$(this).next().slideUp();
+});

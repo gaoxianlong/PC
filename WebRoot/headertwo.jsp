@@ -27,13 +27,11 @@
 					</div>
 				</div>
 				<!--搜索-->
-				<form action="selectkey" class="navbar-form navbar-left" id="my-form" method="post">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="如“数学”" name="Title" style="width: 320px;" value="${search}"/>
-					 <!--<span class="input-group-addon">
-					          <a href="javascript:;"><span class="glyphicon glyphicon-search" ></span></a>
-					    </span>-->
-					    <input type="submit" class="input-group-addon" value="搜索" /> 
+				<form action="selectkey" class="head-form" id="my-form" method="post">
+					<div class="head-input">
+						<input type="text" class="form-text" placeholder="如“数学”" name="Title"/>
+					    <span class="submit-mask"></span>
+					    <input type="submit" class="head-submit" value="" />
 					</div>
 				</form>
                                 <!--扶贫入口
@@ -43,6 +41,8 @@
 				<!--登录注册-->
 				<ul class="nav-login">
 				<li class="nav-dlzc"><a href="javascript:;" style="color: #666;"></a></li>
+				<li><a href="javascript:;"></a></li>
+				
 				<c:if test="${empty u.ID}">
 				<li class="nav-dlzc"><a href="javascript:;" >登录</a></li>
 				<li class="nav-dlzc"><a href="javascript:;" >注册</a></li></c:if>

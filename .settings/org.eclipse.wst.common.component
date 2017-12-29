@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/conf"/>
         <property name="java-output-path" value="/stk/WebRoot/WEB-INF/classes"/>
-        <property name="context-root" value="/testjson"/>
+        <property name="context-root" value="/STK"/>
     </wb-module>
 </project-modules>

@@ -8,6 +8,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json"%>
 <%@ page import="com.stk.entity.Series" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +82,7 @@
 				if(msg.id==1){
 				//window.location.href="<%=path%>/views/member.jsp";
 					$.ajax({
-						url : "vipjudge",
+						url : "vipjudge",//selMuluController
 						type : "POST",
 						
 						data : {

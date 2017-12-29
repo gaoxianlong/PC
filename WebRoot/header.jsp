@@ -1,4 +1,6 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<script>
+</script>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -21,6 +23,7 @@
 					<div id="mymenu">
 						<a href="javascript:;" id="menu-kc">课程 <span
 							class="glyphicon glyphicon-menu-down" style="font-size: 12px;"></span></a>
+							
 						<!--菜单栏-->
 						<div class="topmenu">
 							<div class="allmenu">
@@ -54,17 +57,20 @@
 							</div>
 						</div>
 					</div>
+				    <div class="head-audio">
+						<a href="mpindexmp" target="_blank">音频</a>
+					</div>
 				</div>
+				
 				<!--搜索-->
-				<form action="selectkey" class="navbar-form navbar-left" id="my-form" method="get">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="如“数学”" name="Title" style="width: 320px;" />
-					 <!--<span class="input-group-addon">
-					          <a href="javascript:;"><span class="glyphicon glyphicon-search" ></span></a>
-					    </span>-->
-					    <input type="submit" class="input-group-addon" value="搜索" /> 
+				<form action="selectkey" class="head-form" id="my-form" method="get">
+					<div class="head-input">
+						<input type="text" class="form-text" placeholder="如“数学”" name="Title"/>
+					    <span class="submit-mask"></span>
+					    <input type="submit" class="head-submit" value="" />
 					</div>
 				</form>
+				
                                 <!--扶贫入口-->
 			
            		<div class="fplogo" style="margin-top: 7px;">
@@ -72,7 +78,23 @@
 				</div>
 				<!--登录注册-->
 				<ul class="nav-login">
-				<li><a href="javascript:;" onclick="vip()">成为VIP</a></li>
+				<c:if test="${vp == 0 }">
+					<li class="nav-vip">
+						<a href="javascript:;" onclick="vip()">成为VIP</a>
+					</li>
+				</c:if>
+				
+				<c:if test="${vp == 1 }">
+					<!--<li class="nav-vip">< a href=" " target="_blank">成为VIP</ a></li>-->
+					<li class="nav-vip">
+						<a href="javscript:;">我的VIP</a>
+						<div class="viptime">有效期至：${overtime}</div>
+					</li>
+				</c:if>
+				
+				
+				
+				
 				<li class="nav-dlzc"><a href="javascript:;" style="color: #666;"></a></li>
 				<c:if test="${empty u.ID}">
 				<li class="nav-dlzc"><a href="javascript:;" >登录</a></li>

@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.stk.entity.OrderandSeries;
 import com.stk.entity.Seriesmp;
 import com.stk.entity.Sortmp;
 import com.stk.entity.Users;
@@ -25,12 +28,24 @@ public class MpController {
 	private SeriesService seriesService;
 	
 	// 音频分类（）
+		@RequestMapping(value = "/mpindexmp")
+		public String mpindexmp() {
+			
+			
+			return "/views/audio/audioindex.jsp";
+			
+			
+		}
+	
+	
+	// 音频分类（）
 	@RequestMapping(value = "/mpsort")
 	@ResponseBody
 	public Object wxindexser(
 			Map<String, Object> map,
 			@RequestParam(value = "id",required = false) Integer id,
 			@RequestParam(value = "callback",required = false) String callback,
+			@RequestParam(value="startpage",required=false,defaultValue="1") Integer startpage,
 			HttpSession session
 			) {
 				
@@ -47,7 +62,8 @@ public class MpController {
 //		    nameone = seriesService.seltypename(id);
 //		}
 //		map.put("nameone", nameone);
-					
+							//封装的音频bean
+							Sortmp sortmp = new Sortmp();
 							//一级菜单的名称
 									List<Type> type = null;
 									//取出音频系统所有的一级菜单
@@ -57,18 +73,24 @@ public class MpController {
 							List<Seriesmp> seriesmp = null;
 							
 									if(id !=0){
-										//取出音频系统所有的音频文件
-										seriesmp = seriesService.getSeriesermpyi(id);
-									}else{
 										//取出音频系统一级菜单下对应的音频文件
+										PageHelper.startPage(startpage, 20);
+										seriesmp = seriesService.getSeriesermpyi(id);
+										PageInfo<Seriesmp> pageInfo = new PageInfo<Seriesmp>(seriesmp);
+										sortmp.setPageInfo(pageInfo);
+									}else{
+										//取出音频系统所有的音频文件
+										PageHelper.startPage(startpage, 20);
 										seriesmp = seriesService.getSeriesermptotal();
+										PageInfo<Seriesmp> pageInfo = new PageInfo<Seriesmp>(seriesmp);
+										sortmp.setPageInfo(pageInfo);
 									}
 									
 									
 									// 一级菜单的ID（页面焦点）
 									Integer point = id;
 									
-									Sortmp sortmp = new Sortmp();
+									
 									sortmp.setPoint(point);
 									sortmp.setSeriesmp(seriesmp);
 									sortmp.setType(type);

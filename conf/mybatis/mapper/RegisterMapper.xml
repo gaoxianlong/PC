@@ -11,7 +11,7 @@
 	
 	<update id="updateUsers" parameterType="Users">	
 		update tuser set
-		NickName=#{NickName},RealName=#{RealName},Sex=#{Sex},Birthday=#{Birthday},City1=#{City1},City2=#{City2},City3=#{City3},School=#{School},Grade=#{Grade},Education=#{Education},Teacher=#{Teacher},HelpCode=#{HelpCode},Sign=#{Sign}
+		NickName=#{NickName},RealName=#{RealName},HeadUrl=#{HeadUrl},Sex=#{Sex},Birthday=#{Birthday},City1=#{City1},City2=#{City2},City3=#{City3},School=#{School},Grade=#{Grade},Education=#{Education},Teacher=#{Teacher},Sign=#{Sign}
 		where Telephone=#{Telephone}	
 	</update>
 	<select id="selectCode" parameterType="java.lang.String" resultType="HelpCodes">

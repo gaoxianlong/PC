@@ -108,11 +108,11 @@
 		       <!--  用户名和密码 -->  
 		       <init-param>  
 		            <param-name>loginUsername</param-name>  
-		            <param-value>druid</param-value>  
+		            <param-value>pc</param-value>  
 		        </init-param>  
 		        <init-param>  
 		            <param-name>loginPassword</param-name>  
-		            <param-value>druid</param-value>  
+		            <param-value>admin</param-value>  
 		        </init-param>  
 		    </servlet>  
 		    <servlet-mapping>  

@@ -15,16 +15,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.stk.entity.Wxorder;
 import com.stk.entity.Collect;
 import com.stk.entity.Comment;
 import com.stk.entity.Fpclas;
+import com.stk.entity.OrderandSeries;
+import com.stk.entity.OrderkPage;
 import com.stk.entity.Playrecord;
 import com.stk.entity.Series;
 import com.stk.entity.Seriesvideo;
@@ -146,4 +150,33 @@ public class orderdetaController {
 			return "yes";
 		}
 	}
+	//查询用户自己单个购买的课程订单
+	@RequestMapping(value = "/selorderandk")
+	@ResponseBody
+	public Object selorderandk(
+			@RequestParam(value="startpage",required=false,defaultValue="1") Integer startpage,
+			HttpSession session
+			) {
+		
+		
+		List<OrderandSeries> orderandSeries=null;
+		OrderkPage page=new OrderkPage();
+		Users user = (Users) session.getAttribute("u");
+		int iduser=user.getID();
+		
+		 PageHelper.startPage(startpage, 5);
+		 orderandSeries=vipService.selorderandk(iduser);
+		 PageInfo<OrderandSeries> pageInfo = new PageInfo<OrderandSeries>(orderandSeries);
+		 
+		 page.setPageInfo(pageInfo);
+		 
+		
+	     return page;
+		
+		
+		
+		
+	}
+	
+	
 }

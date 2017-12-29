@@ -521,6 +521,36 @@ public class SelMuluController {
 		 }			
 		
 		 
+		 Users uservip = (Users) session.getAttribute("u");
+		
+		 	int vp=0;
+		 	if(uservip != null){
+			if(vipService.judvip(uservip.getID())){
+				
+				//是VIP
+				
+				//获取VIP的到期时间
+				Wxorder wx=vipService.getwxorder(uservip.getID());
+				Date now = new Date(); 
+				Date over=wx.getOvertime();
+				
+				Long dat=now.getTime();
+				Long ove=over.getTime();
+				
+				if(dat<ove){
+					vp=1;
+					
+					map.put("overtime", over);
+				}else{
+					vp=0;
+				}
+		
+			}else{
+				vp=0;
+			}
+		 }
+		 map.put("vp", vp);
+		 
 		 return "index.jsp";
 		 
 	
@@ -542,8 +572,8 @@ public int play(HttpSession session){
 			
 			Long dat=now.getTime();
 			Long ove=over.getTime();
-			System.out.println(dat+"ccccc9999999999999999999999999999999999999999999999999999999999999999999999");
-			System.out.println(ove+"ddddd8888888888888888888888888888888888888888888888888888888888888888888888");
+			
+		
 			if(dat<ove){
 				vp=1;
 			}else{

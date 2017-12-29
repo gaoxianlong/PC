@@ -51,7 +51,6 @@ public class payfuzhiwxController {
 			@RequestParam(value = "pric",required = false) String pric,
 			@RequestParam(value = "check",required = false,defaultValue="1") String check,
 			@RequestParam(value = "ordernum",required = false,defaultValue="1") String ordernum,
-			
 			 HttpSession session
 			) throws WriterException, IOException {
 		
@@ -127,7 +126,7 @@ public class payfuzhiwxController {
 						String spbill_create_ip ="222.128.104.246";
 						
 						//这里notify_url是 支付完成后微信发给该链接信息，可以判断会员是否支付成功，改变订单状态等。
-						String notify_url ="http://www.shoutike.com/wx/notifyServlet";
+						String notify_url ="https://www.shoutike.com/wx/notifyServlet";
 						
 						String trade_type = "NATIVE";
 					

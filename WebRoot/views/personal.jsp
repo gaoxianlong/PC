@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="<%=path %>/content/ion.calendar.css" />
 <link rel="stylesheet" type="text/css" href="<%=path %>/css/public.css" />
 <link rel="stylesheet" type="text/css" href="<%=path %>/css/personal.css" />
+<link rel="stylesheet" type="text/css" href="<%=path %>/css/pagepublic.css" />
 <script type="text/javascript">
 
 	//直接加载播放记录
@@ -177,6 +178,11 @@ function fromplay(obj){
 						<span class="list-title" onclick="getCollect()">收藏记录</span>
 						<span class="list-icon"></span>
 					</li>
+					<li class="lists">
+						<span class="list-img"></span>
+						<span class="list-title">我的购买</span>
+						<span class="list-icon"></span>
+					</li>
 					<!-- 
 					<li class="lists">
 						<span class="list-img"></span>
@@ -249,7 +255,14 @@ function fromplay(obj){
 						
 					</ol>
 				</div>
-				
+				<div class="person-item">
+					<div class="person-kc" id="mypay">
+					</div>
+					<div class="pagerwrap">
+    			    	<ul class="pagebox clearfix" id="paypage">	
+    			    	</ul>
+    			    </div>
+				</div>
 				<!--我的奖学金
 				<div class="person-item">
 					<div class="person-jxj">
@@ -580,6 +593,7 @@ function fromplay(obj){
 <script type="text/javascript" src="../jscript/ion.calendar.min.js"></script>
 <script type="text/javascript" src="../jscript/area.js"></script>
 <script type="text/javascript" src="../js/personal.js"></script>
+<script type="text/javascript" src="../js/personpage.js"></script>
 <script>
 //	点击我的订单详情 出现弹窗效果
 	$('.order-xq-btn').on('click',function(){

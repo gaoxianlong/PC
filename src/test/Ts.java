@@ -10,6 +10,9 @@ import com.google.zxing.qrcode.QRCodeWriter;
 
 public class Ts {
 
+ public void main(){
+	
+ }
 	
 	
 }
