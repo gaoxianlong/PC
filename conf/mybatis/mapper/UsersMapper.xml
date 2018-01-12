@@ -28,7 +28,7 @@
 	</select>
 	<update id="updateWxID" parameterType="Users">
 		update tuser set WXopendID=#{WXopendID},NickName=#{NickName},Sex=#{Sex},City1=#{City1},City2=#{City2},
-		Unionid=#{Unionid},HeadUrl=#{HeadUrl} where ID=#{ID}
+		Unionid=#{Unionid},Qqid=#{Qqid},HeadUrl=#{HeadUrl} where ID=#{ID}
 	</update>
 	<update id="updataWxPhone" parameterType="WxUser">
 		update twxuser set Telephone=#{Telephone} where ID=#{ID}

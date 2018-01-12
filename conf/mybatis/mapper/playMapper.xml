@@ -30,5 +30,8 @@
 		select * from series where ID=#{id}
 
 	</select>
+	<select id="selectPlayOne" parameterType="java.lang.Integer" resultType="Playrecord">
+		select p.addtimes,p.vid,sv.Sort,sv.SID sid,s.Title,sv.Title stitle,s.PicURL,s.ID from playrecord p,seriesvideo sv,series s where uid=#{uid} and p.vid=sv.ID and sv.SID=s.ID order by p.addtimes DESC limit 1	
 	
+	</select>
 </mapper>

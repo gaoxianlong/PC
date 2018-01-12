@@ -13,17 +13,48 @@ $('.login-tab span').on('click',function(){
 	$('.login-con').eq($(this).index()).addClass('logreg-active');
 });
 //点击顶部导航的登录 注册效果
-$('.nav-login .nav-dlzc').on('click',function(){
-//	console.log($('.nav-login .nav-dlzc'));
-//	console.log($('.nav-login .nav-dlzc').length);
-//	console.log($(this).html());
-//	console.log($(this).index()-1);
+$('.nav-dlzc li').on('click',function(){
 	$('.login-mask').css('display','block');
 	$('.login').css('display','block');
 	$('.login-tab span').removeClass('active-title');
-	$('.login-tab span').eq($(this).index()-2).addClass('active-title');
+	$('.login-tab span').eq($(this).index()).addClass('active-title');
 	$('.login .login-con').removeClass('logreg-active');
-	$('.login .login-con').eq($(this).index()-2).addClass('logreg-active');
+	$('.login .login-con').eq($(this).index()).addClass('logreg-active');
+});
+
+//加载播放记录
+	function playone(){
+		$.get("getplay","",function(data){
+			
+			if(data.length!=0){
+			
+			$("#p-title").html(data.title);
+			$("#p-title").attr('title',data.title);
+			$("#p-stitle").html(data.stitle);
+			$("#p-stitle").attr('title',data.stitle);
+			$('.nav-kcjl').click(function(){
+				window.location.href="http://www.shoutike.com/STK/play?seriesID="+data.sid+"&id="+data.vid;
+			});
+			}else{
+			$('.nav-kcjl').css('display','none');
+			$("#p-noplay").html("&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp暂时还没有观看记录呦～");
+			}
+		});	
+	}
+	window.onload = playone();
+//没有成为VIP 鼠标移入头像出现个人中心和退出内容
+$('#not-vip .nav-img').on('mouseover',function(){
+	
+	$('#not-vip .nav-img-con').show();
+});
+$('#not-vip .nav-img').on('mouseout',function(){
+	$('#not-vip .nav-img-con').hide();
+});
+//成为VIP 鼠标移入头像出现个人中心和退出内容
+$('#vipok').hover(function(){
+	$('#vipok .nav-img-con').show();
+},function(){
+	$('#vipok .nav-img-con').hide();
 });
 //点击登录的 关闭按钮
 $('.btn-close').on('click',function(){
@@ -116,7 +147,7 @@ $('.login-btn').click(function(){
 		            	$.cookie("username-stk", "", { expires: -1 });
 		            	$.cookie("password-stk", "", { expires: -1 });
 		            }
-					//location.href ="getmenuindex.action";	
+					//location.href ="getmenuindex";	
 				location.reload();	
 				}
 			});
@@ -543,7 +574,7 @@ $('#forget-btn').click(function(){
 				alert('操作失败');
 			}else{
 				//提交到 
-				$.post("updatepwd.action","telephone="+phone+"&password="+pwd,function(data){
+				$.post("updatepwd","telephone="+phone+"&password="+pwd,function(data){
 					if(data){
 						alert("找回密码成功");
 						e.preventDefault();
@@ -646,7 +677,7 @@ function yhm(obj){
         $("#preferential").val("");
     }
     else {
-    	$.post("gethelpCode.action","HelpCode="+Pval,function(date){
+    	$.post("gethelpCode","HelpCode="+Pval,function(date){
     	
     		if(date.length<5){
     			 $(".error2").hide();
@@ -672,8 +703,8 @@ function yhm(obj){
 //鼠标移入VIP效果
 $('.nav-vip a').hover(function(){
 	$(this).css('color','#d21213');
-	$(this).next().slideDown();
+	
 },function(){
 	$(this).css('color','#fff');
-	$(this).next().slideUp();
+	
 });

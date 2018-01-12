@@ -47,5 +47,9 @@ public class RegisterService {
 	public Users selectUserService(Integer id){
 		return registerDao.selectUser(id);
 	}
+	public void updateUsersTwoService(Users users) {
+		// TODO Auto-generated method stub
+		registerDao.updateTwoUsers(users);
+	}
 	
 }

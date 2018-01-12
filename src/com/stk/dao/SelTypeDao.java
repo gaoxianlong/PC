@@ -8,8 +8,6 @@ import com.stk.entity.Carousel;
 import com.stk.entity.Series;
 import com.stk.entity.Type;
 
-
-
 public interface SelTypeDao {
 /*
  * 
@@ -56,16 +54,10 @@ public interface SelTypeDao {
 	public List<Series> getFppreSerieser(Integer id);
 	//所有扶贫课程
 	public List<Series> totalfpSerieser();
-	
-	
-	
-	
-	
 	//所有课程
 	public List<Series> totalSerieserzh();
 	public List<Series> totalSerieserzr();
 	public List<Series> totalSerieserzx();
-	
 	
 	public void addtypeyi(Type type);
 	public void addtypeer(Type type);
@@ -74,5 +66,12 @@ public interface SelTypeDao {
 	public void uptypeyi(Type type);
 	
 	public Type upgetMulvyi(Integer id);
+	
+	//三级菜单的total 视频
+	public List<Series> selthirdcourse(@Param("ls")List ls);
+	//二级菜单的total 视频
+	public List<Series> selsecondcourse(@Param("ls")List ls);
+	
+	public List<Type> selsecondType(@Param("ls")List ls);
 	
 }

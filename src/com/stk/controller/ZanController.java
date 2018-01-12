@@ -10,9 +10,13 @@ import org.aspectj.weaver.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.stk.entity.Collect;
+import com.stk.entity.OrderkPage;
 import com.stk.entity.Playrecord;
 import com.stk.entity.Users;
 import com.stk.entity.Zan;
@@ -99,15 +103,16 @@ public class ZanController {
 	/**查询收藏记录*/
 	@RequestMapping(value="/selectColl")
 	@ResponseBody
-	public List<Collect> selectColl(Map<String, Object> map,HttpSession session){
+	public Object selectColl(
+			@RequestParam(value="startpage",required=false,defaultValue="1") Integer startpage,
+			HttpSession session){
+		List<Collect> clist=null;
+		OrderkPage page=new OrderkPage();
 		Users u=(Users) session.getAttribute("u");
-		List<Collect> clist=zanService.selectCollAllService(u.getID());
-		System.out.println(clist.size());
-		for(Collect c:clist){
-			
-			System.out.println(c);
-			
-		}
-		return clist;
+		PageHelper.startPage(startpage, 5);
+		clist=zanService.selectCollAllService(u.getID());
+		PageInfo<Collect> pageSeries=new PageInfo<Collect> (clist);
+		page.setPageInfo(pageSeries);
+		return page;
 	}
 }

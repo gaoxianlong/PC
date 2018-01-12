@@ -17,6 +17,7 @@ public interface PlayDao {
 	public List<Playrecord> selectPlay(Integer uid);
 	public void ClickRate(Integer id);
 	public Series getplaySeries(Integer id);
+	public Playrecord selectPlayOne(Integer id);
 
 	
 }

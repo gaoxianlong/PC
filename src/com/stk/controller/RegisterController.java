@@ -131,7 +131,7 @@ public class RegisterController {
 	}
 	/**更改用户资料*/
 	@RequestMapping("/update")
-	public String update(Users users,HttpSession session){
+	public String update(Users users,HttpSession session,Map<String, Object> map){
 		//先获取用户信息
 		System.out.println(users.toString());
 		Users user=(Users) session.getAttribute("u");
@@ -140,7 +140,10 @@ public class RegisterController {
 		registerService.updateUsersService(users);
 		//保存后查询用户信息
 		Users use=loginService.selectPhoneService(users.getTelephone());
+		map.put("u", use);
 		session.setAttribute("u", use);
+		System.out.println(use.toString());
+		
 		//session.setMaxInactiveInterval(43200);
 		return "redirect:/getmenuindex";
 	}
@@ -177,7 +180,7 @@ public class RegisterController {
 				e.printStackTrace();
 			}	
 			
-		registerService.updateUsersService(users);
+		registerService.updateUsersTwoService(users);
 		//保存后查询用户信息
 		Users use=loginService.selectPhoneService(users.getTelephone());
 		session.setAttribute("u", use);

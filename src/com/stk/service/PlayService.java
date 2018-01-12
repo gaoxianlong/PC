@@ -36,5 +36,10 @@ public class PlayService {
 	public Series getplaySeries(Integer id){
 		return playDao.getplaySeries(id);
 	}
+
+	public Playrecord selectPlayOneService(Integer id) {
+		// TODO Auto-generated method stub
+		return playDao.selectPlayOne(id);
+	}
 }
 

@@ -15,8 +15,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta name="keywords" content="2017考研,四六级考试,思维导图,学前,公务员考试,小学,初中,高中,考研专业课,考研公共课,高考,微商,中考,艺考,托福考试,雅思考试,法语口语" />
 <meta name="description" content="手提课，是全球第一家提出“互联网+教育扶智”的综合性微课教育平台，也是翻转课堂的倡导者和践行者。手提课为学前、小学、初中、高中等人群提供包括语文、数学、英语等精品微课服务。微课简短精炼，生动有趣，满足课前预习，课后复习的学习需求。公众号“手提课K12”" />
-<link rel="shortcut icon" href="<%=path%>/icon/favicon.ico">
-<link rel="Bookmark" href="<%=path%>/icon/favicon.ico">
+<link rel="shortcut icon" href="<%=path%>/img/icon/favicon.ico">
+<link rel="Bookmark" href="<%=path%>/img/icon/favicon.ico">
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -159,6 +159,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</c:forEach>
 										</c:forEach>
 									</c:if>
+								<c:if test="${empty thirdtotal}">
 									<c:if test="${sub == 1 }">
 										<c:forEach items="${type1 }" var="bs">
 											<c:forEach items="${as1 }" var="bsd">
@@ -173,6 +174,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											</c:forEach>
 										</c:forEach>
 									</c:if>
+								</c:if>
+								<c:if test="${!empty thirdtotal}">
+									<a href="selsub?id=1&sort=4" name="board" data-id="${point3 }" value="1" class="sx_child">语文</a>	
+									<a href="selsub?id=2&sort=4" name="board" data-id="${point3 }" value="2" class="sx_child">数学</a>
+									<a href="selsub?id=3&sort=4" name="board" data-id="${point3 }" value="3" class="sx_child">英语</a>
+									<a href="selsub?id=4&sort=4" name="board" data-id="${point3 }" value="4" class="sx_child">物理</a>
+									<a href="selsub?id=5&sort=4" name="board" data-id="${point3 }" value="5" class="sx_child">化学</a>
+									<a href="selsub?id=6&sort=4" name="board" data-id="${point3 }" value="6" class="sx_child">生物</a>
+									<a href="selsub?id=7&sort=4" name="board" data-id="${point3 }" value="7" class="sx_child">政治</a>
+									<a href="selsub?id=8&sort=4" name="board" data-id="${point3 }" value="8" class="sx_child">历史</a>
+									<a href="selsub?id=9&sort=4" name="board" data-id="${point3 }" value="9" class="sx_child">地理</a>								
+								</c:if>
 							</dd>
 						</dl>
 					</div>

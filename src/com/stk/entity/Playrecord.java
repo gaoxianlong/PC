@@ -13,9 +13,17 @@ public class Playrecord {
 	private String Title;//视频标题
 	private String PicURL;//图片地址
 	private int SID;
+	private String Stitle;
 	
 	
+	public void setStitle(String stitle) {
+		Stitle = stitle;
+	}
 	
+	public String getStitle() {
+		return Stitle;
+	}
+
 	public int getSID() {
 		return SID;
 	}

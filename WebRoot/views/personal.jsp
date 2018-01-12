@@ -16,8 +16,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta name="keywords" content="2017考研,四六级考试,思维导图,学前,公务员考试,小学,初中,高中,考研专业课,考研公共课,高考,微商,中考,艺考,托福考试,雅思考试,法语口语" />
 <meta name="description" content="手提课，是全球第一家提出“互联网+教育扶智”的综合性微课教育平台，也是翻转课堂的倡导者和践行者。手提课为学前、小学、初中、高中等人群提供包括语文、数学、英语等精品微课服务。微课简短精炼，生动有趣，满足课前预习，课后复习的学习需求。公众号“手提课K12”" />
-<link rel="shortcut icon" href="<%=path%>/icon/favicon.ico">
-<link rel="Bookmark" href="<%=path%>/icon/favicon.ico">
+<link rel="shortcut icon" href="<%=path%>/img/icon/favicon.ico">
+<link rel="Bookmark" href="<%=path%>/img/icon/favicon.ico">
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -27,93 +27,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" type="text/css" href="<%=path %>/css/public.css" />
 <link rel="stylesheet" type="text/css" href="<%=path %>/css/personal.css" />
 <link rel="stylesheet" type="text/css" href="<%=path %>/css/pagepublic.css" />
-<script type="text/javascript">
 
-	//直接加载播放记录
-	function getplay(){
-		
-		$.post("${pageContext.request.contextPath}/selectPlay?startpage=1","",
-				function(date){
-			var json=eval(date);
-			
-			var item='';
-			
-			$.each(json,function(index,ele){ 
-				
-				item+="<li class='myrecords'><div class='records-img'><img src='../cover/"+json[index].picURL+"' width='200' height='124' /></div><div class='records-texts'><div class='records-title'><h2>"+json[index].title+"</h2></div><div class='records-now'>已学习到第"+json[index].sort+"集</div><div class='cursor golearn-btn toplay-btn' onclick='fromplay(this);' value='"+json[index].id+"'send='"+json[index].vid+"'>继续学习</div><p>上次学习时间：<span>"+json[index].addtimes+"</span></p></div></li>";
-				
-			});
-			 
-			
-			$("#ol1").html(item);
-			});
-	}
-	//点击加载收藏记录
-	function getCollect(){
-		$.post("${pageContext.request.contextPath}/selectColl.action","",
-				function(date){
-			var json=eval(date);
-			
-			var item='';
-			
-			$.each(json,function(index,ele){ 
-				
-item+="<li class='myrecords'><div class='records-img'><img src='../cover/"+json[index].picURL+"' width='200' height='124' /></div><div class='records-texts'><div class='records-title'><h2>"+json[index].title+"</h2><span class='glyphicon glyphicon-trash' id='close' onclick='deleteColl(this);' value='"+json[index].uid+"'send='"+json[index].vid+"'></span></div><div class='records-now'></div><div class='cursor golearn-btn' onclick='fromplay(this);' value='"+json[index].id+"'send='"+json[index].vid+"'>继续学习</div><p class='colect'>上次学习时间：<span>"+json[index].addtimes+"</span></p></div></li>";				
-			});
-			$("#il1").html(item);
-			});
-	}
-	//点击继续学习进入播放页面fromplay();
-function fromplay(obj){
-	var SID=$(obj).attr("value");
-	var id=$(obj).attr("send");
-					 $.ajax({  
-						 
-						 url:"${pageContext.request.contextPath}/selectID?sid="+SID,
-				           type: "POST",  
-				           success:function(data){  
-				        	   //alert(data);
-				        	   if(data==true){
-				        		   $.post("${pageContext.request.contextPath}/selectHelpCode?uid="+${u.ID},"",function(date){
-				        			  //alert(date+"444");
-				        			   if(date==true){
-				        			    window.location.href = "${pageContext.request.contextPath}/ffpplay?seriesID="+SID+"&id="+id;
-
-					        	   }else{
-					                 window.location.href = "${pageContext.request.contextPath}/play?seriesID="+SID+"&id="+id;
-					        	   }  
-				        		   });
-				        	   }else{
-					                 window.location.href = "${pageContext.request.contextPath}/play?seriesID="+SID+"&id="+id;
-
-				        	   }
-				        	   }  
-				    });
-					
-				}
-	//删除收藏记录
-	function deleteColl(obj){
-		var uid=$(obj).attr("value");
-		var vid=$(obj).attr("send");
-						 $.ajax({  
-							 url:"${pageContext.request.contextPath}/deleteCollect?uid="+uid+"&vid="+vid,
-					           type: "POST",  
-					           success:function(data){  
-					        	   getCollect();
-					              }  
-					    });
-	}
-	
-	
-		
-	//退出
-	function cookies(){
-			$.cookie("password-stk", "", { expires: 0});
-
-	}
-</script>
 </head>
-<body onload="getplay();">
+<body>
 <div class="wrap"  >
 	<!--顶部-->
 	<div class="navheader clearfix">
@@ -136,11 +52,97 @@ function fromplay(obj){
 				<a href="${pageContext.request.contextPath}/getFpMulu " class="navbar-brand" target="_blank"></a>
         
 		</div>
-			<!--登录注册-->
-			<ul class="nav-login">
-				<li><a href="javascript:;"></a></li>
-				<li class="nav-dlzc"><a href="${pageContext.request.contextPath}/loginSession" onclick="cookies();">退出</a></li>
-			</ul>
+			                             
+				<!--登录注册-->
+				<div class="nav-login">
+					<!--初次加载页面未登录注册状态-->
+					<c:if test="${empty u.ID}">
+						<div class="dl-init">
+							<div class="not-vip">
+								<!-- <a href="javscript:;" onclick="vip()" >开通VIP</a> -->	
+							 <a href="javscript:;"  ></a> 
+							</div>
+							<ul class="nav-dlzc">
+								<li class="cursor">登录</li>
+								<li class="cursor">注册</li>
+							</ul>
+						</div>
+					</c:if>
+					<!--已登录注册状态 未成为VIP-->
+					<c:if test="${!empty u.ID}">
+						<c:if test="${u.vip == 0 }">
+							<div class="dlzc-notvip" id="not-vip">
+								<div class="nav-vip">
+									<!-- <a href="javscript:;" onclick="vip()" >开通VIP</a> -->	
+							 <a href="javscript:;"  ></a> 
+								</div>
+								<div class="nav-img">
+									<div class="person-img">
+										<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+										<a href="javscript:;"><img src="${u.headUrl}"/></a>
+			 						  </c:if>
+			  			              <c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										<a href="javscript:;"><img src="../${u.headUrl}"/></a>
+			                          </c:if>
+									</div>
+									<div class="nav-img-con">
+										<div class="nav-tx">
+											<p>
+												<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+											<img src="${u.headUrl}" />
+			 						  	</c:if>
+			  			              	<c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										 	<img src="../${u.headUrl}" />
+			                          	</c:if>
+											</p>
+											<span><em class="ellipsis">${u.nickName}</em></span>
+											
+										</div>
+										
+										<div class="nav-colse">
+											<a href="${pageContext.request.contextPath}/loginSession">安全退出</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:if>
+						<!--已登录注册状态 成为VIP-->
+						<c:if test="${u.vip == 1 }">
+							<div class="dlzc-vip" id="vipok">
+								<div class="nav-vip">
+									<a href="javascript:;">我的VIP</a>
+								</div>
+								<div class="nav-img">
+									<div class="person-img">
+										<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+										<a href=" "><img src="${u.headUrl}" /></a>
+			 						  </c:if>
+			  			              <c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										<a href="javscript:;"><img src="../${u.headUrl}" /></a>
+			                          </c:if>
+									</div>
+									<div class="nav-img-con">
+										<div class="nav-tx">
+											<p>
+												<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+											<img src="${u.headUrl}" />
+			 						  	</c:if>
+			  			              	<c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										 	<img src="../${u.headUrl}" />
+			                          	</c:if>
+											</p>
+											<span><em class="ellipsis">${u.nickName}</em><i></i></span>
+											<h6>VIP有效期至：${u.viptime}</h6>
+										</div>
+										<div class="nav-colse">
+											<a href="${pageContext.request.contextPath}/loginSession">安全退出</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:if>
+					</c:if>
+				</div>
 		</div>
 	</div>
 		
@@ -211,10 +213,21 @@ function fromplay(obj){
 			<div class="person-right">
 				<!--我的播放记录-->
 				<div class="person-item item-active" >
-					<ol class="play-record" id="ol1">
+					<ol class="play-record" id="mybfjl">
 					
 					</ol>
-				
+				    <div class="pagerwrap">
+    			    	<ul class="pagebox clearfix" id="bfjlpage">
+    			    		<li>首页</li>
+    			    		<li>上一页</li>
+    			    		<li class="pageItem pageItemactive">1</li>
+    			    		<li class="pageItem">2</li>
+    			    		<li class="pageItem">3</li>
+    			    		<li class="pageItem">4</li>
+    			    		<li>下一页</li>
+    			    		<li>尾页</li>
+    			    	</ul>
+    			    </div>
 				<!--课程分页-->
 	    				<!--     <div class="pager">
 	    			    	
@@ -251,9 +264,21 @@ function fromplay(obj){
 	    			    </div>
 				<!--我的收藏记录-->
 				<div class="person-item">
-					<ol class="play-record" id="il1">
+					<ol class="play-record" id="myscjl">
 						
 					</ol>
+					<div class="pagerwrap">
+    			    	<ul class="pagebox clearfix" id="scjlpage">
+    			    		<li>首页</li>
+    			    		<li>上一页</li>
+    			    		<li class="pageItem pageItemactive">1</li>
+    			    		<li class="pageItem">2</li>
+    			    		<li class="pageItem">3</li>
+    			    		<li class="pageItem">4</li>
+    			    		<li>下一页</li>
+    			    		<li>尾页</li>
+    			    	</ul>
+    			    </div>
 				</div>
 				<div class="person-item">
 					<div class="person-kc" id="mypay">
@@ -326,7 +351,7 @@ function fromplay(obj){
 									<ul class="clearfix">
 										<li>昵称：</li>
 										<li>
-											<input type="text" hidden="hidden" name="ID" value="${u.ID}">
+											<input type="text" hidden="hidden" name="ID" value="${u.ID}" id="uid">
 											<input type="text" value="${u.nickName}" name="nickName" id="nickName"/>
 										</li>
 									</ul>
@@ -370,7 +395,7 @@ function fromplay(obj){
 													//初始值
 													var opt0 = [];
 													opt0.push("${u.city1}","${u.city2}","${u.city3}");
-													console.log(opt0);
+													//console.log(opt0);
 													_init_area();
 													</script>
 												</div>
@@ -588,6 +613,7 @@ function fromplay(obj){
 </html>
 <script src="../jscript/jquery-2.0.3.js"></script>
 <script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/login-public.js"></script>
 <script type="text/javascript" src="../jscript/moment.min.js"></script>
 <script type="text/javascript" src="../jscript/moment.zh-cn.js"></script>
 <script type="text/javascript" src="../jscript/ion.calendar.min.js"></script>

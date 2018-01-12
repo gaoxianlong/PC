@@ -100,28 +100,22 @@ public class SelMuluController {
 		as.addAll(type2);
 		for (int t = 0; t < type2.size(); t++) {
 			type3 = selTypeService.getMulvsan(type2.get(t).getID());
-			
 			asd.addAll(type3);
 		}
-
 		 PageHelper.startPage(startpage, 16);
 		 series=selTypeService.getSeriesyi(id);
 		 PageInfo<Series> pageInfo = new PageInfo<Series>(series);
 		 seriests = pageInfo.getList();
-		
-		 //
-			
+		 //	
 		map.put("seriestuijian", seriests);
 		//
-
 		map.put("info", pageInfo);
 		map.put("series", seriests);
 		map.put("totall2", 0);
 		map.put("totall3", 0);
+		map.put("thirdtotal", "thirdtotal");
 		point=id;
 	}
-	
-	
 	if(sort==2){
 		type0 = selTypeService.getMulvyi(0);
 		
@@ -129,31 +123,20 @@ public class SelMuluController {
 	
 		type2 = selTypeService.getMulver(type22.get(0).getParentID());
 		as.addAll(type2);
-		
-		
-		
-			type3 = selTypeService.getMulvsan(id);
-			
-			asd.addAll(type3);
-
-			point=type22.get(0).getParentID();
-			point2=id;
-			
+			 type3 = selTypeService.getMulvsan(id);
+			 asd.addAll(type3);
+			 point=type22.get(0).getParentID();
+			 point2=id;
 			 PageHelper.startPage(startpage, 16);
 			 series=selTypeService.getSerieser(id);
 			 PageInfo<Series> pageInfo = new PageInfo<Series>(series);
 			 seriests = pageInfo.getList(); 
-			 
 			 //
-			 
 			 map.put("seriestuijian", seriests);
-			 //
-
-			 
+			 // 
 			 map.put("info", pageInfo);
-			map.put("series", seriests);
-			
-			map.put("totall3", 0);
+			 map.put("series", seriests);
+			 map.put("totall3", 0);
 	}
 	
 	if(sort==3){
@@ -166,36 +149,153 @@ public class SelMuluController {
 		tysan=selTypeService.getMulvsansub(id);
 		//二级菜单的信息
 		tyer=selTypeService.getMulversub(tysan.get(0).getParentID());
-		
 		//type22 = selTypeService.getMulversub(tyer.get(0).getID());
-	
 		type2 = selTypeService.getMulver(tyer.get(0).getParentID());
 		as.addAll(type2);
 		
-		//tyyiid=selTypeService.getMulvyisub()
-		
+			//tyyiid=selTypeService.getMulvyisub()
 			type3 = selTypeService.getMulvsan(tysan.get(0).getParentID());
-			
 			asd.addAll(type3);
-
 			point=tyer.get(0).getParentID();
 			point2=tysan.get(0).getParentID();
 			point3=id;
 			
-			PageHelper.startPage(startpage, 16);
-			series=selTypeService.getSeriessan(id);
+			 PageHelper.startPage(startpage, 16);
+			 series=selTypeService.getSeriessan(id);
+			 PageInfo<Series> pageInfo = new PageInfo<Series>(series);
+			 seriests = pageInfo.getList();
+			 //
+			 map.put("seriestuijian", series);
+			//  
+			 map.put("info", pageInfo);
+			 map.put("series", seriests);
+	}
+	if(sort==4){
+		type0 = selTypeService.getMulvyi(0);
+		
+		List<Integer> ls=new ArrayList<Integer>();
+		List<Integer> lstype=new ArrayList<Integer>();
+		lstype.add(189);
+		lstype.add(190);
+		lstype.add(206);
+		List<Type> tysan=null;
+		List<Type> tyer=null;
+		
+			 point3=id;
+			 
+			 if(id==1){
+				//语文		
+					ls.add(192);
+					ls.add(195);
+					ls.add(197);
+					ls.add(215);
+					ls.add(217);
+					ls.add(220);
+					ls.add(224);
+					ls.add(228);
+					ls.add(232);
+					ls.add(242);
+					ls.add(273);
+					ls.add(279);
+			}
+			if(id==2){
+				//数学	
+				ls.add(193);
+				ls.add(203);
+				ls.add(204);
+				ls.add(211);
+				ls.add(218);
+				ls.add(221);
+				ls.add(225);
+				ls.add(229);
+				ls.add(233);
+				ls.add(243);
+				ls.add(249);
+				ls.add(274);
+				ls.add(280);
+			}
+			if(id==3){			
+				//英语	
+				ls.add(194);
+				ls.add(201);
+				ls.add(212);
+				ls.add(213);
+				ls.add(214);
+				ls.add(222);
+				ls.add(223);
+				ls.add(230);
+				ls.add(234);
+				ls.add(238);
+				ls.add(248);
+				ls.add(251);
+				ls.add(287);		
+			}
+			if(id==4){
+				//物理	
+				ls.add(236);
+				ls.add(240);
+				ls.add(245);
+				ls.add(261);
+				ls.add(267);
+			}
+			if(id==5){
+				//化学	
+				ls.add(268);
+				ls.add(275);
+				ls.add(282);
+				ls.add(288);	
+			}
+			if(id==6){
+				//生物	
+				ls.add(257);
+				ls.add(263);
+				ls.add(269);
+				ls.add(276);
+				ls.add(283);
+				ls.add(289);	
+			}
+			if(id==7){
+				//政治	
+				ls.add(237);
+				ls.add(244);
+				ls.add(247);
+				ls.add(258);
+				ls.add(264);
+				ls.add(270);
+				ls.add(284);
+				ls.add(291);
+			}
+			if(id==8){
+				//历史	
+				ls.add(259);
+				ls.add(265);
+				ls.add(271);
+				ls.add(277);
+				ls.add(285);
+				ls.add(290);	
+			}
+			if(id==9){
+				//地理
+				ls.add(260);
+				ls.add(266);
+				ls.add(272);
+				ls.add(278);
+				ls.add(286);
+			}
+			 PageHelper.startPage(startpage, 16);
+			 series=selTypeService.selthirdcourse(ls);
 			 PageInfo<Series> pageInfo = new PageInfo<Series>(series);
 			 seriests = pageInfo.getList();
 			 
-			 
-			 //
-			 
-		
-			 map.put("seriestuijian", series);
+			 tyer=selTypeService.selsecondType(lstype);
+			 as.addAll(tyer);
+			 //推荐视频
+			map.put("seriestuijian", series);
 			// 
-			 
-			 
-			 map.put("info", pageInfo);
+			map.put("thirdtotal", "thirdtotal");
+			map.put("totall", 0);
+			map.put("totall2", 0);
+			map.put("info", pageInfo);
 			map.put("series", seriests);
 	}
 	
@@ -502,23 +602,23 @@ public class SelMuluController {
 		 Users user=null;
 		 String telephone=null;
 		 //判断cookie
-		 if(cookies!=null){
-			 for(Cookie cookie:cookies){
-				 String username=cookie.getName();
-				 String password=cookie.getValue();
-				 if("username-stk".equals(username)){
-					telephone=password;
-					 System.out.println(username+password+"77777777777777");
-				 }
-				 if("password-stk".equals(username)){
-					 user=loginService.selectPhoneService(telephone);	
-					 System.out.println(user);
-					 session.setAttribute("u", user);
-					 session.setMaxInactiveInterval(43200);
-				 }
-			 }
-			 //System.exit(0);
-		 }			
+//		 if(cookies!=null){
+//			 for(Cookie cookie:cookies){
+//				 String username=cookie.getName();
+//				 String password=cookie.getValue();
+//				 if("username-stk".equals(username)){
+//					telephone=password;
+//					 System.out.println(username+password+"77777777777777");
+//				 }
+//				 if("password-stk".equals(username)){
+//					 user=loginService.selectPhoneService(telephone);	
+//					 System.out.println(user);
+//					 session.setAttribute("u", user);
+//					 session.setMaxInactiveInterval(43200);
+//				 }
+//			 }
+//			 //System.exit(0);
+//		 }			
 		
 		 
 		 Users uservip = (Users) session.getAttribute("u");

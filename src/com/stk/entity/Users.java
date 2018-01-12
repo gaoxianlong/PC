@@ -30,6 +30,21 @@ public class Users
   private String Unionid;
   private String demo1;
   private String wxclass;
+  private Integer vip;
+  private Date viptime;
+  
+public Date getViptime() {
+	return viptime;
+}
+public void setViptime(Date viptime) {
+	this.viptime = viptime;
+}
+public Integer getVip() {
+	return vip;
+}
+public void setVip(Integer vip) {
+	this.vip = vip;
+}
 public Integer getID() {
 	return ID;
 }

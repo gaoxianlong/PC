@@ -150,6 +150,36 @@
 	update type set TypeName=#{TypeName},layered=#{layered} where ID=#{ID} 
 	
 	</update>
+    
+    <!-- 三级菜单的total 视频 -->
+	<select id="selthirdcourse" parameterType="java.util.List" resultType="Series">
+        SELECT * FROM series
+        WHERE Type3Value IN
+        <foreach collection="ls" index="index" item="item"
+            open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        ORDER BY RAND()
+    </select>
+    
+    <!-- 二级菜单的total 视频 -->
+	<select id="selsecondcourse" parameterType="java.util.List" resultType="Series">
+        SELECT * FROM series
+        WHERE Type2Value IN
+        <foreach collection="ls" index="index" item="item"
+            open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        ORDER BY RAND()
+    </select>
+    
+    <select id="selsecondType" parameterType="java.util.List" resultType="Type">
+        SELECT  *FROM TYPE WHERE ParentID IN
+        <foreach collection="ls" index="index" item="item"
+            open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
 	
 	<!-- <select id="getVulner" resultType="Vulner"> select * from vulner </select> 
 		<select id="getdingBs" resultType="Vulner"> select * from vulner </select> 

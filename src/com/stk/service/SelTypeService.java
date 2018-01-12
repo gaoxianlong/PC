@@ -2,6 +2,7 @@ package com.stk.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import com.stk.dao.SelTypeDao;
 import com.stk.entity.Carousel;
 import com.stk.entity.Series;
 import com.stk.entity.Type;
+import com.stk.entity.Users;
 
 @Service
 public class SelTypeService {
@@ -167,10 +169,20 @@ public class SelTypeService {
 		selTypeDao.uptypeyi(type);
 	}
 	
-	
-	
 	public Type upgetMulvyi(Integer id){
 		return selTypeDao.upgetMulvyi(id);
 		
+	}
+	
+	public List<Series> selthirdcourse(@Param("ls")List ls){
+		return selTypeDao.selthirdcourse(ls);
+	}
+	
+	public List<Series> selsecondcourse(@Param("ls")List ls){
+		return selTypeDao.selsecondcourse(ls);
+	}
+	
+	public List<Type> selsecondType(@Param("ls")List ls){
+		return selTypeDao.selsecondType(ls);
 	}
 }

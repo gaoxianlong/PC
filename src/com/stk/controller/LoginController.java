@@ -2,11 +2,15 @@ package com.stk.controller;
 
 import java.io.Reader;
 import java.nio.channels.SeekableByteChannel;
+import java.util.Date;
+import java.util.Map;
 
 import javax.jms.Session;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
 import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +20,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.stk.entity.Playrecord;
 import com.stk.entity.Users;
 import com.stk.entity.WxUser;
+import com.stk.entity.Wxorder;
 import com.stk.service.LoginService;
+import com.stk.service.PlayService;
 import com.stk.service.RegisterService;
+import com.stk.service.VipService;
 import com.stk.util.Sha256Utile;
 
 @Controller
@@ -28,12 +36,16 @@ public class LoginController {
 	private LoginService service;
 	@Autowired
 	private RegisterService registerService;
-
+	@Autowired
+	private PlayService playService;
+	@Autowired
+	private VipService vipService;
 	/** 通过手机号码查询用户信息 */
 	@RequestMapping(value = "/selectphone", produces = "text/plain;charset=utf-8")
 	@ResponseBody
 	public String selectphone(@RequestParam("telephone") String Telephone,
-			@RequestParam("password") String Password, HttpSession session) {
+			@RequestParam("password") String Password, HttpSession session,
+			HttpServletResponse response) {
 		System.out.println("用户名为：" + Telephone + "\t" + "密码为：" + Password);
 		Users u = service.selectPhoneService(Telephone);
 		// 给密码加密
@@ -50,6 +62,25 @@ public class LoginController {
 		System.out.println(u.getPassword() + "数据库");
 		if (Telephone.equals(u.getTelephone())
 				&& Password.equals(u.getPassword())) {
+			
+			int vp=0;
+			Date over=null;
+			if(vipService.judvip(u.getID())){
+				Wxorder wx=vipService.getwxorder(u.getID());
+				Date now = new Date(); 
+				over=wx.getOvertime();
+				Long dat=now.getTime();
+				Long ove=over.getTime();
+				if(dat<ove){
+					vp=1;
+				}else{
+					vp=0;
+				}
+			}else{
+				vp=0;
+			}
+			u.setViptime(over);
+			u.setVip(vp);
 			session.setAttribute("u", u);
 			// session.setMaxInactiveInterval(10800);
 			System.out.println("该用户信息为+" + u.toString());
@@ -58,6 +89,24 @@ public class LoginController {
 			return "false";
 		}
 	}
+	/***
+	 * 查询第一条播放记录
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("/getplay")
+	@ResponseBody
+	public Playrecord getplay(HttpSession session){
+		Users user = (Users) session.getAttribute("u");
+		if(user==null){
+			return null;
+		}
+		Playrecord p=playService.selectPlayOneService(user.getID());
+			return p;
+		
+		
+	}
+	
 
 	/** 输入手机号码后判断手机号是否存在 */
 	@RequestMapping(value = "/getphone", produces = "text/plain;charset=utf-8")

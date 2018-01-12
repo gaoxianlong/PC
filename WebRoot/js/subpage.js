@@ -4,14 +4,13 @@ fn($("[name='stage']"));
 fn($("[name='board']"));
 function fn(arr){
 	arr.each(function(){
-		console.log($(this).attr('data-id')+$(this).attr('value'));
+		//console.log($(this).attr('data-id')+$(this).attr('value'));
 		if($(this).attr('data-id')==$(this).attr('value')){
-			console.log(55);
+			//console.log(55);
 			
 			$(this).addClass('on');
 			
 		}
-		
 	});
 }
 

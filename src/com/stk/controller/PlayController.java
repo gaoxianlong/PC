@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.stk.entity.Order;
+import com.stk.entity.OrderkPage;
 import com.stk.entity.Wxorder;
 import com.stk.entity.Collect;
 import com.stk.entity.Comment;
@@ -666,23 +667,23 @@ public class PlayController {
 	/**查询播放记录*/
 	@RequestMapping(value="/selectPlay")
 	@ResponseBody
-	public List<Playrecord> selectPlay( Map<String, Object> map,@RequestParam(value="startpage",required=false,defaultValue="1") Integer startpage,HttpSession session){
-		Users u=(Users) session.getAttribute("u");
-		Map<String,Object> playMap=new HashMap<String,Object>();
-		PageHelper.startPage(startpage, 4);
-		List<Playrecord> plist=playService.selectPlayService(u.getID());
-		PageInfo<Playrecord> pageSeries=new PageInfo<Playrecord> (plist);
-		Integer pageName=pageSeries.getPageNum();
-		Integer navigatePages=pageSeries.getNavigatePages();
-		System.out.println(plist.size());
-		map.put("pageSeries",pageSeries);
-		//map.put("pageSeries",pageSeries);
-		playMap.put("plist", plist);
-		playMap.put("pageSeries", pageSeries);
-		for(Playrecord p:plist){
-			System.out.println(p);	
-		}
-		return plist;
+		public Object selectPlay( 
+				@RequestParam(value="startpage",required=false,defaultValue="1") Integer startpage,
+				HttpSession session){
+			int start=1;
+			List<Playrecord> plist=null;
+			OrderkPage page=new OrderkPage();
+			Users u=(Users) session.getAttribute("u");
+			if(startpage<=10){
+				start=startpage;
+			}else{
+				start=10;
+			}
+			PageHelper.startPage(start, 5);
+			plist=playService.selectPlayService(u.getID());
+			PageInfo<Playrecord> pageSeries=new PageInfo<Playrecord> (plist);
+			page.setPageInfo(pageSeries);
+			 return page;
 	}
 
 	

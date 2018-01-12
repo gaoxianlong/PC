@@ -40,23 +40,11 @@ public class SelController {
 		
 		    List<Type> list_all=selTypeService.getMulvtotal();  
 		    ArrayList as=new ArrayList();
-		   
 		    List<Type> treeNodes=null;
 		    treeNodes=JsonTreeFactory.buildtree(list_all,0); 
 		    as.addAll(treeNodes);
-		    map.put("json", "123456");
+		   // map.put("json", "123456");
 		 return as;
 	}
 
-//	@RequestMapping(value = "/getMulujsonjson")
-//	@ResponseBody
-//	public String basics(Map<String, Object> map) {
-//		
-//		    List<Type> list_all=selTypeService.getMulvtotal();  
-//		    
-//		    List<Type> treeNodes=null;
-//		    treeNodes=JsonTreeFactory.buildtree(list_all,0); 
-//		    map.put("json", treeNodes);
-//		 return "page/json.jsp";
-//	}
 }

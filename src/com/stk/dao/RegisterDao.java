@@ -18,4 +18,5 @@ public interface RegisterDao {
 	public void updatePwd(Users users);
 	/**通过用户id查询*/
 	public Users selectUser(Integer id);
+	public void updateTwoUsers(Users users);
 }

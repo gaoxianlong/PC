@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -41,19 +43,121 @@
 					<span>1,高等数学之微积分学</span>
 				</div>
 			</div>-->
-			<!--登录注册-->
-			<ul class="nav-login">
-				<li class="nav-dlzc"><a href="javascript:;" style="color: #fff;"></a></li>
-				<c:if test="${!empty u.headUrl}">
-				<li><a href="<%=path%>/views/personal.jsp"><img alt="" src="${u.headUrl}" style="width: 40px;height: 40px;border-radius: 50%;-webkit-border-radius: 50%;"></a></li>
-				<li><a href="${pageContext.request.contextPath}/loginSession">退出</a></li></c:if>
-				 <c:if test="${!empty u.telephone&&!empty u.nickName&&empty u.headUrl}">				
-				<li ><a href="<%=path%>/views/personal.jsp"  >${u.nickName}</a></li>
-				<li  ><a href="${pageContext.request.contextPath}/loginSession"  >退出</a></li></c:if>		
-				<c:if test="${!empty u.telephone&&empty u.nickName&&empty u.headUrl}">				
-				<li  ><a href="<%=path%>/views/personal.jsp" >${u.telephone}</a></li>				
-				<li ><a href="${pageContext.request.contextPath}/loginSession">退出</a></li></c:if> 
-			</ul>
+						<!--登录注册-->
+				<div class="nav-login">
+					<!--初次加载页面未登录注册状态-->
+					<c:if test="${empty u.ID}">
+						<div class="dl-init">
+							<div class="not-vip">
+								<!-- <a href="javscript:;" onclick="vip()" >开通VIP</a> -->	
+							 <a href="javscript:;"  ></a> 
+							</div>
+							<ul class="nav-dlzc">
+								<li class="cursor">登录</li>
+								<li class="cursor">注册</li>
+							</ul>
+						</div>
+					</c:if>
+					<!--已登录注册状态 未成为VIP-->
+					<c:if test="${!empty u.ID}">
+						<c:if test="${u.vip == 0 }">
+							<div class="dlzc-notvip" id="not-vip">
+								<div class="nav-vip">
+									<!-- <a href="javscript:;" onclick="vip()" >开通VIP</a> -->	
+							 <a href="javscript:;"  ></a> 
+								</div>
+								<div class="nav-img">
+									<div class="person-img">
+										<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+										<a href="javscript:;"><img src="${u.headUrl}"/></a>
+			 						  </c:if>
+			  			              <c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										<a href="javscript:;"><img src="../${u.headUrl}"/></a>
+			                          </c:if>
+									</div>
+									<div class="nav-img-con">
+										<div class="nav-tx">
+											<p>
+												<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+											<img src="${u.headUrl}" />
+			 						  	</c:if>
+			  			              	<c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										 	<img src="../${u.headUrl}" />
+			                          	</c:if>
+											</p>
+											<span><em class="ellipsis">${u.nickName}</em></span>
+											
+										</div>
+										<div><span id="p-noplay"></span> </div>
+										<div class="nav-kcjl">
+											<a class="my-bfjl" href="javascript:;">
+												<h5>
+													<i></i>
+													<span class="ellipsis" id="p-title"></span>
+												</h5>
+												<p>
+													<span class="ellipsis" id="p-stitle"></span>
+													<span>继续</span>
+												</p>
+											</a> <a class="my-sybf" href="views/personal.jsp"> 查看所有播放记录 </a>
+										</div>
+										<div class="nav-colse">
+											<a href="${pageContext.request.contextPath}/loginSession">安全退出</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:if>
+						<!--已登录注册状态 成为VIP-->
+						<c:if test="${u.vip == 1 }">
+							<div class="dlzc-vip" id="vipok">
+								<div class="nav-vip">
+									<a href="javascript:;">我的VIP</a>
+								</div>
+								<div class="nav-img">
+									<div class="person-img">
+										<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+										<a href="javscript:;"><img src="${u.headUrl}"/></a>
+			 						  </c:if>
+			  			              <c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										<a href="javscript:;"><img src="../${u.headUrl}"/></a>
+			                          </c:if>
+									</div>
+									<div class="nav-img-con">
+										<div class="nav-tx">
+											<p>
+												<c:if test="${fn:containsIgnoreCase(u.headUrl, 'http')}">
+											<img src="${u.headUrl}" />
+			 						  	</c:if>
+			  			              	<c:if test="${fn:containsIgnoreCase(u.headUrl, 'userhadle')}">
+										 	<img src="../${u.headUrl}" />
+			                          	</c:if>
+											</p>
+											<span><em class="ellipsis">${u.nickName}</em><i></i></span>
+											<h6>VIP有效期至：${u.viptime}</h6>
+										</div>
+										<div><span id="p-noplay"></span> </div>
+										<div class="nav-kcjl">
+											<a class="my-bfjl" href="javascript:;">
+												<h5>
+													<i></i>
+													<span class="ellipsis" id="p-title"></span>
+												</h5>
+												<p>
+													<span class="ellipsis" id="p-stitle"></span>
+													<span>继续</span>
+												</p>
+											</a> <a class="my-sybf" href="views/personal.jsp"> 查看所有播放记录 </a>
+										</div>
+										<div class="nav-colse">
+											<a href="${pageContext.request.contextPath}/loginSession">安全退出</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:if>
+					</c:if>
+				</div>
 		</div>
 	</div>
 	<div class="wrapper">
