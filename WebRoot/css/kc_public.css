@@ -92,6 +92,7 @@
 }
 .section .m_pos .stk-body ul li a{
 	display: block;
+	cursor: pointer;
 }
 .section .m_pos .stk-body ul li a:hover{
 	text-decoration: none;

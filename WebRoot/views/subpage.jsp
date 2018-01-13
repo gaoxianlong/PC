@@ -229,7 +229,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													</div>	
 												</div>
 												<div class="texts">
-													<div class="titles">${ser.title}<em></em></div>
+													<div class="titles ellipsis">${ser.title}<em></em></div>
 													<div class="kcsm">
 														<div class="kcsm-top">
 															<p>
@@ -294,7 +294,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div class="kcmask"></div>
 									</div>
 									<div class="texts">
-										<div class="titles">西医综合导学</div>
+										<div class="titles ellipsis">西医综合导学</div>
 										<div class="kcsm">
 											<div class="kcsm-top">
 												<p>
@@ -330,7 +330,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<div class="kcmask"></div>
 									</div>
 									<div class="texts">
-										<div class="titles">西医综合导学</div>
+										<div class="titles ellipsis">西医综合导学</div>
 										<div class="kcsm">
 											<div class="kcsm-top">
 												<p>

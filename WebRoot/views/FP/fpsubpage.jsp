@@ -297,7 +297,7 @@
 										</div>
 									</div>
 									<div class="texts">
-										<div class="titles">${preSeries.title }</div>
+										<div class="titles ellipsis">${preSeries.title }</div>
 										<div class="kcsm">
 											<div class="kcsm-top">
 												<p>

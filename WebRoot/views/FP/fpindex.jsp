@@ -291,7 +291,7 @@
 								                <div class="kcmask"></div>
 											</div>
 											<div class="texts">
-												<div class="titles">${preSeries.title }</div>
+												<div class="titles ellipsis">${preSeries.title }</div>
 												<div class="kcsm">
 													<p>
 														<span></span>
@@ -359,7 +359,7 @@
 									                <div class="kcmask"></div>
 												</div>
 												<div class="texts">
-													<div class="titles">${bs.title}</div>
+													<div class="titles ellipsis">${bs.title}</div>
 													<div class="kcsm">
 														<p>
 															<span></span>

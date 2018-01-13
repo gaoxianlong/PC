@@ -209,6 +209,7 @@
 }
 .section .m_pos .stk-body .tabs .fir .only a{
 	display: block;
+	cursor: pointer;
 }
 .section .m_pos .stk-body .tabs .fir .only a:hover{
 	text-decoration: none;
@@ -250,6 +251,7 @@
 }
 .section .m_pos .stk-body .zxkc .only a{
 	display: block;
+	cursor: pointer;
 }
 .section .m_pos .stk-body .zxkc .only a:hover{
 	text-decoration: none;

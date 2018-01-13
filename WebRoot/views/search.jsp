@@ -118,7 +118,7 @@
 												<div class="kcmask"></div>
 											</div>
 											<div class="texts">
-												<div class="titles">${k.title}<em></em></div>
+												<div class="titles ellipsis">${k.title}<em></em></div>
 												<div class="kcsm">
 													<div class="kcsm-top">
 														<p>
